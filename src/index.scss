@@ -55,7 +55,18 @@ body, html{
   .col{
     flex: 1;
   }
+}
 
+.cardContainer{
+  font-size: 1.25rem;
+
+  .col{
+    flex-grow: 1;
+  }
+
+  img{
+    width: 100%;
+  }
 }
 
 .primary-text-color{
