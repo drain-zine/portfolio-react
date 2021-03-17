@@ -49,6 +49,15 @@ body, html{
   }
 }
 
+.flex-grid{
+  display: flex;
+  
+  .col{
+    flex: 1;
+  }
+
+}
+
 .primary-text-color{
   color: $primary-text-color;
 }
