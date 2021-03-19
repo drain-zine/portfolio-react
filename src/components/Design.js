@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import DesignCard from './DesignCard';
-
 import $ from 'jquery'; 
+
+import DesignCard from './DesignCard';
+import Menu from './Menu.js';
+
 import {designs_raw} from './../data/Designs.js';
 
 const Design = () => {
@@ -15,10 +17,6 @@ const Design = () => {
      useEffect(() => {
         // reset page to top
         window.scrollTo(0, 0);
-
-        // vars for menu fades
-        const delayTime = 200;
-        const fadeTime = 300;
 
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
@@ -63,21 +61,6 @@ const Design = () => {
             }
         });
 
-        $.fn.reverse = [].reverse;
-        $(".menuBtn").mouseenter(function(){
-            $(".menu div").reverse().each(function(i) {   
-                $(this).delay(delayTime * i).fadeTo(fadeTime,1);
-            });
-        });
-
-        $(".dropdown").mouseleave(function(){
-            console.log("Hello");
-            $(".menu div").each(function(i) {   
-                $(this).delay(delayTime * i).fadeTo(fadeTime,0);
-            });
-        });
-
-
         // scroll event handler
         window.onscroll = () => {
             var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -119,17 +102,7 @@ const Design = () => {
                 
             </div>
 
-            <div className="dropdown fixed flex flex-col m-8 p-3 ">
-                <div className="menu">
-                    <div><a href="/index.html">Home</a></div>
-                    <div><a href="/portfolio.html">Portfolio</a></div>	
-                    <div><a href="/contact.html">Contact</a></div>	
-                </div>
-
-                <div className="menuBtn cursor-pointer">
-                    <h3>Menu</h3>
-                </div>
-            </div>
+            <Menu />
         </main>
     );
 }
