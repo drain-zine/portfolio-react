@@ -25,7 +25,7 @@ export const designs_raw = [
         key: 3,
         type: 1,
         spacing_top: 80,
-        spacing_bottom: 0,
+        spacing_bottom: 32,
 
         img: require("./../assets/dynamic/skeleton.gif").default,
         text_1: 'Drain Zine Edition 1. An independent student zine focusing on the fringes of art, fashion and music culture. What will you find from down the drain?',
