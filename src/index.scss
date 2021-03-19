@@ -26,6 +26,12 @@ $primary-link-color: red;
 $background-color: black;
 $heading-font: 'CanelaRegular';
 
+$design-page-font-size: 1.25rem;
+
+html{
+  font-size: 16px;
+}
+
 body, html{
   background-color: $background-color;
   color: $primary-text-color;
@@ -58,15 +64,18 @@ body, html{
 }
 
 .cardContainer{
-  font-size: 1.25rem;
-
-  .col{
-    flex-grow: 1;
-  }
+  font-size: $design-page-font-size;
+  width: 50%;
 
   img{
     width: 100%;
+    height: auto;
   }
+
+  .paragraphContainer{
+    font-size: 3 * $design-page-font-size / 4;
+  }
+
 }
 
 .primary-text-color{
@@ -79,4 +88,45 @@ body, html{
 
 .tertiary-text-color{
   color: $tertiary-text-color;
+}
+
+/* random card positioning */
+.mlr-0{
+  margin-left: 0;
+}
+
+.mlr-1{
+  margin-left: 10%;
+}
+
+.mlr-2{
+  margin-left: 20%;
+}
+
+.mlr-3{
+  margin-left: 30%;
+}
+
+.mlr-4{
+  margin-left: 40%;
+}
+
+.mlr-5{
+  margin-left: 50%;
+}
+
+.mlr-6{
+  margin-left: 60%;
+}
+
+.mlr-7{
+  margin-left: 70%;
+}
+
+.mlr-8{
+  margin-left: 80%;
+}
+
+.mlr-9{
+  margin-left: 90%;
 }
