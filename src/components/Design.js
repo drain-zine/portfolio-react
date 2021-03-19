@@ -22,38 +22,50 @@ const Design = () => {
             setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)]);
         }
     
-       /*  console.log(docHeight); */
         // vars for scroll anim
-        const path = document.getElementById('line-path');
-        var pathLength = 0
+        const paths = document.getElementsByClassName('line-path');
+        var pathLengths = [];
         var drawLength = 0;
 
         // vars for upward scrolling behaviour
         var lastScrollTop = 0;
         var scrollUp = false;
-        var lastDrawLength = 0;
+
+        // pre specify this -> allows us to address values
+        var lastDrawLengths = new Array(cards.length);
 
         // wait until next tick -> if we do this immediately, dom renderer will have yet to scale path to doc height state and thus our line will have path length 0
         process.nextTick(() => {
-            pathLength = path.getTotalLength()
-            path.style.strokeDasharray = pathLength + ' ' + pathLength;
-            path.style.strokeDashoffset = pathLength; 
+            for(let i = 0; i < paths.length; i++){
+                let pathLength = paths[i].getTotalLength();
+                console.log(pathLength);
+                paths[i].style.strokeDasharray = pathLength + ' ' + pathLength;
+                paths[i].style.strokeDashoffset = pathLength; 
+                
+                pathLengths[i] = pathLength;
+            }
         });
-    
+
+        // scroll event handler
         window.onscroll = () => {
             var st = window.pageYOffset || document.documentElement.scrollTop;
-
-            // only apply if scrolling down
+            console.log(pathLengths);
+            // check if scrolling down
             if(st > lastScrollTop){
-                // DO NOT RESET
-                drawLength = pathLength * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
-                if(!scrollUp || drawLength >= lastDrawLength){
-                    console.log("p: " + pathLength.toString() + "d: " + drawLength.toString());
-                    path.style.strokeDashoffset = pathLength - drawLength;
+                // handle drawing of each path
+                for(let i = 0; i < paths.length; i++){
+                    // only apply if scrolling down, and if beyond current line
+                    if(!scrollUp || drawLength >= lastDrawLengths[i]){
+                        drawLength = pathLengths[i] * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+                        console.log("p: " + pathLengths[i] + " d: " + drawLength);
+                        paths[i].style.strokeDashoffset = pathLengths[i] - drawLength;
+                    
+                        // update last draw lengths
+                        lastDrawLengths.push(drawLength);
+                    }
                 }
             }else{
                 scrollUp = true;
-                lastDrawLength = drawLength;
             }
             
             // for mobile devices
