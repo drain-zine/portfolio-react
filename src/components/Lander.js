@@ -3,8 +3,8 @@ import video from './../assets/video/red.mov';
 
 const Lander = () => {
     return(
-        <main className="lander relative ">
-            <div className="ml-24 mt-24 absolute z-20">
+        <main className="lander page">
+            <div className="ml-24 mt-24 relative z-20">
                 <h1>Tom Stannett</h1>
                 <a href="/design"><h1 className="link ml-24">Design</h1></a>
                 <h1 className="link ml-16">Art</h1>
