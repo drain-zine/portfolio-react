@@ -17,6 +17,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'Favorit';
+  src: url("./fonts/Favorit-RegularExtended.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 $primary-text-color: white;
 $secondary-text-color: red;
 $tertiary-text-color: DarkGray;
@@ -24,7 +31,14 @@ $tertiary-text-color: DarkGray;
 $primary-link-color: red;
 
 $background-color: black;
-$heading-font: 'CanelaRegular';
+$primary-heading-font: 'CanelaRegular';
+$secondary-heading-font: 'Favorit';
+
+$design-page-font-size: 1.25rem;
+
+html{
+  font-size: 16px;
+}
 
 body, html{
   background-color: $background-color;
@@ -32,7 +46,7 @@ body, html{
 }
 
 .lander{
-  font-family: $heading-font;
+  font-family: $primary-heading-font;
   text-align: start;
   font-size: 8rem;
 
@@ -49,6 +63,48 @@ body, html{
   }
 }
 
+.flex-grid{
+  display: flex;
+  
+  .col{
+    flex: 1;
+  }
+}
+
+.cardContainer{
+  font-size: $design-page-font-size;
+  width: 50%;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  .paragraphContainer{
+    font-size: 3 * $design-page-font-size / 4;
+  }
+
+}
+
+.dropdown{
+  font-size: 2rem;
+  bottom: 0;
+  right: 0;
+
+  font-family: $secondary-heading-font;
+}
+
+.menu div{
+  opacity: 0;
+}
+
+.menu div:hover{
+  color: red;
+}
+.dropdown:hover .menu{
+	visibility: visible; 
+}
+
 .primary-text-color{
   color: $primary-text-color;
 }
@@ -59,4 +115,56 @@ body, html{
 
 .tertiary-text-color{
   color: $tertiary-text-color;
+}
+
+/* random card positioning */
+.mlr-0{
+  margin-left: 0;
+}
+
+.mlr-1{
+  margin-left: 10%;
+}
+
+.mlr-2{
+  margin-left: 20%;
+}
+
+.mlr-3{
+  margin-left: 30%;
+}
+
+.mlr-4{
+  margin-left: 40%;
+}
+
+.mlr-5{
+  margin-left: 50%;
+}
+
+.mlr-6{
+  margin-left: 60%;
+}
+
+.mlr-7{
+  margin-left: 70%;
+}
+
+.mlr-8{
+  margin-left: 80%;
+}
+
+.mlr-9{
+  margin-left: 90%;
+}
+
+svg{
+  width: 100%;
+}
+
+.page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
