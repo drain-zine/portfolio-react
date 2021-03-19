@@ -8,18 +8,26 @@ const Design = () => {
 
     const [docHeight, setDocHeight] = useState([]);
 
+    const [lineRandYOffset, setLineRandYOffset] = useState([]);
+
      // animate lines
      useEffect(() => {
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
         var cardContainerParentHeight = cardContainerParent.offsetHeight;
+        var sbHeight = window.innerHeight * (window.innerHeight / document.body.offsetHeight);
+        
+
+        cardContainerParentHeight += sbHeight;
 
         var cards = document.getElementsByClassName("cardContainer");
 
         // adjust heights of lines
         for(let i = 0; i < cards.length; i++){
+            let rand_offset = 3+Math.floor(Math.random() * 4);
             let card_y = cards[i].getBoundingClientRect().top;
-            setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)]);
+            setLineRandYOffset(lineRandYOffset => [...lineRandYOffset, rand_offset]);
+            setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)*(1+(rand_offset/100))]);
         }
     
         // vars for scroll anim
@@ -38,7 +46,8 @@ const Design = () => {
         process.nextTick(() => {
             for(let i = 0; i < paths.length; i++){
                 let pathLength = paths[i].getTotalLength();
-                console.log(pathLength);
+               // adjust for random positioning increment
+                
                 paths[i].style.strokeDasharray = pathLength + ' ' + pathLength;
                 paths[i].style.strokeDashoffset = pathLength; 
                 
@@ -49,7 +58,6 @@ const Design = () => {
         // scroll event handler
         window.onscroll = () => {
             var st = window.pageYOffset || document.documentElement.scrollTop;
-            console.log(pathLengths);
             // check if scrolling down
             if(st > lastScrollTop){
                 // handle drawing of each path
@@ -85,7 +93,7 @@ const Design = () => {
             <div className="flex-initial relative">
                 
                     {designs.map((design,index) => (
-                        <DesignCard design={design} docHeight={docHeight[index]}/>
+                        <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
                         
                     ))}
                 
