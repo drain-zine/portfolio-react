@@ -42,8 +42,10 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9.8.6",
+    "jquery": "^3.6.0",
     "next-tick": "^1.0.0",
     "postcss": "^7.0.35",
+    "react-helmet": "^6.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   }
 }
