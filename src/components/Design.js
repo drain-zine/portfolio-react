@@ -10,6 +10,8 @@ const Design = () => {
         <main className="lander flex mt-24">
             <div className="flex-initial inline-block ml-24 z-20 mr-0">
                 <h1>Design</h1>
+
+                <div className="dropDownContainer fixed"></div>
             </div>
 
             <div className="flex-initial relative">
