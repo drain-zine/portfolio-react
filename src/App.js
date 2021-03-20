@@ -8,6 +8,8 @@ import './animations/slideTransition.scss';
 
 import Lander from './views/Lander';
 import Design from './views/Design';
+import AvantVibes from './views/Moodboards/AvantVibes';
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
                 <Switch location={location}>
                   <Route path="/" exact component={Lander} />
                   <Route path="/design" exact component={Design} />
+                  <Route path="/moodboards/avant_vibes" exact component={AvantVibes} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
