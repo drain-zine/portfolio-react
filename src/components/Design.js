@@ -15,8 +15,14 @@ const Design = () => {
 
      // animate lines
      useEffect(() => {
+         /* INIT */
         // reset page to top
         window.scrollTo(0, 0);
+
+        /* Fade in Elements */
+        $(".cardContainer").each(function(i) {   
+            $(this).delay((400+600) * (i+1)).fadeTo((600+600),1);
+        });
 
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
@@ -24,7 +30,7 @@ const Design = () => {
         var sbHeight = window.innerHeight * (window.innerHeight / document.body.offsetHeight);
         var startingLength = 3;
 
-        cardContainerParentHeight += sbHeight;
+        cardContainerParentHeight += 400;
 
         var cards = document.getElementsByClassName("cardContainer");
 
@@ -61,6 +67,8 @@ const Design = () => {
             }
         });
 
+
+
         // scroll event handler
         window.onscroll = () => {
             var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -89,17 +97,16 @@ const Design = () => {
 
 
     return(
-        <main className="lander flex mt-24">
+        <main className="lander page flex mt-24">
             <div className="flex-initial inline-block ml-24 z-20 mr-0">
                 <h1>Design</h1>
             </div>
 
             <div className="flex-initial relative">
-                    {designs.map((design,index) => (
-                        <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
-                        
-                    ))}
-                
+                {designs.map((design,index) => (
+                    <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
+                    
+                ))}
             </div>
 
             <Menu />
