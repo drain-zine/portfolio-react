@@ -21,7 +21,7 @@ const Design = () => {
 
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   
-            $(this).delay(400 * i).fadeTo(500,1);
+            $(this).delay((400+600) * (i+1)).fadeTo((600+600),1);
         });
 
         // set doc height state to scale line container
