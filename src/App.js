@@ -6,8 +6,8 @@ import {Helmet} from "react-helmet";
 import './App.scss';
 import './animations/slideTransition.scss';
 
-import Lander from './components/Lander';
-import Design from './components/Design';
+import Lander from './views/Lander';
+import Design from './views/Design';
 
 function App() {
   return (

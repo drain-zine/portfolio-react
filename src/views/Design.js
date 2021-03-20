@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import $ from 'jquery'; 
 
-import DesignCard from './DesignCard';
-import Menu from './Menu.js';
+import DesignCard from '../components/DesignCard';
+import Menu from '../components/Menu.js';
 
-import {designs_raw} from './../data/Designs.js';
+import {designs_raw} from '../data/Designs.js';
 
 const Design = () => {
     // state decs
