@@ -13,6 +13,10 @@ import {data_raw} from '../../data/Moodboards/AvantVibes.js';
 const AvantVibes = () => {
     // state decs
     const [data] = useState(data_raw);
+
+    useEffect(() => {
+        $(document).scrollTop(0);
+    });
     
     return(
         <DesignContainer data={data} title={"Avant Vibes"} color={"white"} fontColor={"black"} />

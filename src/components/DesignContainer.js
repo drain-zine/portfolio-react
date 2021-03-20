@@ -93,7 +93,7 @@ const DesignContainer = ({data,title,color, fontColor}) => {
       }, []);
 
     return(
-        <main className={"bg-"+color + " text-"+ fontColor +" lander page flex mt-24"}>
+        <main className={"bg-"+color + " text-"+ fontColor +" lander page flex pt-24"}>
             <div className="flex-initial inline-block ml-24 z-20 mr-0">
                 <h1>{title}</h1>
             </div>

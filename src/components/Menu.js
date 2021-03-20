@@ -28,7 +28,7 @@ const Menu = () => {
     });
 
     return(
-        <div className="dropdown fixed flex flex-col m-8 p-3 draggable">
+        <div className="dropdown fixed flex flex-col m-8 p-3 z-30 draggable">
             <div className="menu">
                 <div><a href="/">Home</a></div>
                 <div><Link to="/moodboards/avant_vibes">Portfolio</Link></div>	
