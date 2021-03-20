@@ -15,8 +15,14 @@ const Design = () => {
 
      // animate lines
      useEffect(() => {
+         /* INIT */
         // reset page to top
         window.scrollTo(0, 0);
+
+        /* Fade in Elements */
+        $(".cardContainer").each(function(i) {   
+            $(this).delay(400 * i).fadeTo(500,1);
+        });
 
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
@@ -60,6 +66,8 @@ const Design = () => {
                 pathLengths[i] = pathLength;
             }
         });
+
+
 
         // scroll event handler
         window.onscroll = () => {
