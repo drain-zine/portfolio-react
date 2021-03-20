@@ -45,6 +45,11 @@ body, html{
   color: $primary-text-color;
 }
 
+// hide horiz scrollbar on slide transistion
+body{
+  overflow-x: hidden;  
+}
+
 .lander{
   font-family: $primary-heading-font;
   text-align: start;

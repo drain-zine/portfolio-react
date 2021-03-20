@@ -27,7 +27,7 @@ const Menu = () => {
     return(
         <div className="dropdown fixed flex flex-col m-8 p-3 ">
             <div className="menu">
-                <div><a href="/index.html">Home</a></div>
+                <div><a href="/">Home</a></div>
                 <div><a href="/portfolio.html">Portfolio</a></div>	
                 <div><a href="/contact.html">Contact</a></div>	
             </div>

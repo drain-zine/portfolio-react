@@ -19,7 +19,7 @@ const DesignCard = ({design,docHeight,lineRandYOffset}) => {
         </div>
 
         );
-    }else if(design.type == 2){
+    }else if(design.type === 2){
         return(
             <div className={"cardContainer flex mt-" + design.spacing_top.toString() + " mb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
 

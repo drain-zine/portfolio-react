@@ -103,11 +103,10 @@ const Design = () => {
             </div>
 
             <div className="flex-initial relative">
-                    {designs.map((design,index) => (
-                        <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
-                        
-                    ))}
-                
+                {designs.map((design,index) => (
+                    <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
+                    
+                ))}
             </div>
 
             <Menu />
