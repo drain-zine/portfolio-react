@@ -10,6 +10,7 @@ export const data_raw = [
         spacing_bottom: 0,
         rand_x: false,
         x_pos: 1,
+        card_width: 80,
 
         img: require("./../../assets/static/AVindex.png").default,
         img_size: 75,
@@ -24,6 +25,7 @@ export const data_raw = [
         spacing_bottom: 0,
         rand_x: false,
         x_pos: 3,
+        card_width: 60,
 
         text_1: 'The Avant Vibes webpage took two design cues from seemingly disparate design philosophies. The general layout and arguably main theme of the site was minimalism, as utilised by retail sites such as Supreme.',
         img: require("./../../assets/static/SupremeMain.png").default,
@@ -38,6 +40,7 @@ export const data_raw = [
         spacing_bottom: 32,
         rand_x: false,
         x_pos: 1,
+        card_width: 60,
 
         img: require("./../../assets/static/SupremeAbout.png").default,
         img_size: 50,
@@ -52,10 +55,11 @@ export const data_raw = [
         spacing_bottom: 0,
         rand_x: false,
         x_pos: -1,
+        card_width: 100,
 
         text_1: 'In contrast, the second major design cue was from archaic web design practices, notably the use of tables and loud graphics which became popular in the late 90s and early to mid 00s.',
         img: require("./../../assets/static/AVarchive.png").default,
-        img_size: 50,
+        img_size: 80,
         text_2: 'One could posit that the popularity of this style was due to the explosion of the web in the early 2000s. With the rise of web development as a profession, as well as software like adobe flash, a growing toolkit was available to designers and amateurs alike. This led to a proliferation of website templates and royalty free assets leading to heavy use of standarised tabular layouts featuring and dynamic elements such as gifs and animations.',   
     },
 
@@ -67,6 +71,7 @@ export const data_raw = [
         spacing_bottom: 0,
         rand_x: false,
         x_pos: 0,
+        card_width: 60,
 
         text_1: '',
         img: require("./../../assets/static/FrogGallery.png").default,
@@ -81,6 +86,7 @@ export const data_raw = [
         spacing_bottom: 0,
         rand_x: false,
         x_pos: 4,
+        card_width: 60,
 
         text_1: 'With this, and the minimalist design practice as explored above in mind, the Avant Vibes website combines these by taking complementary design elements from both. The simple, high-contrast colour schemes and text boxes are taken from the minimalist approach and combined with tables and low contrast or greyscaled 3D renders and assets to provide a unique visual style.',
         img: require("./../../assets/static/WarcraftIndex.png").default,
@@ -90,15 +96,16 @@ export const data_raw = [
 
     {
         key: 7,
-        type: 2,
+        type: 6,
         spacing_top: y_spacing_half,
         spacing_bottom: 28,
         rand_x: false,
-        x_pos: -5,
+        x_pos: -2,
+        card_width: 100,
 
         text_1: 'The methodology of nostalgic, amatuer webdesign comes to a head on the links page of the site \- a page for cataloguing secondary and tertiary content pertaining to the radio show. Here the blend of minimalist layout and colour schemes and busy yet chromatically subdued assets was thrown out in favour of a pure maximalist approach.',
         img: require("./../../assets/static/AVlinks.png").default,
-        img_size: 10,
+        img_size: 80,
         text_2: '',   
     },
 ];
