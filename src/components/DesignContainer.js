@@ -23,19 +23,18 @@ const DesignContainer = ({data,title,color, fontColor}) => {
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
         var cardContainerParentHeight = cardContainerParent.offsetHeight;
-        var sbHeight = window.innerHeight * (window.innerHeight / document.body.offsetHeight);
+       
         var startingLength = 3;
 
-        cardContainerParentHeight += 400;
-
+        /* cardContainerParentHeight += sbHeight; */
+      
+        
         var cards = document.getElementsByClassName("cardContainer");
 
         // adjust heights of lines
+       
         for(let i = 0; i < cards.length; i++){
-            let rand_offset = 3+Math.floor(Math.random() * 4);
-            let card_y = cards[i].getBoundingClientRect().top;
-            setLineRandYOffset(lineRandYOffset => [...lineRandYOffset, rand_offset]);
-            setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)*(1+(rand_offset/100))]);
+           
         }
     
         // vars for scroll anim
@@ -50,9 +49,20 @@ const DesignContainer = ({data,title,color, fontColor}) => {
         // pre specify this -> allows us to address values
         var lastDrawLengths = new Array(cards.length);
 
+        /* setTimeout(function(){console.log("wawgwan: " + $("main").outerHeight(true));},200); */
+
         // wait until next tick -> if we do this immediately, dom renderer will have yet to scale path to doc height state and thus our line will have path length 0
-        process.nextTick(() => {
+        /* process.nextTick(() => { */
+        setTimeout(function(){
+            cardContainerParentHeight=$("main").outerHeight(true);
+            console.log("test timeout :): " + cardContainerParentHeight);
+           
             for(let i = 0; i < paths.length; i++){
+                let rand_offset = 3+Math.floor(Math.random() * 4);
+                let card_y = cards[i].getBoundingClientRect().top;
+                setLineRandYOffset(lineRandYOffset => [...lineRandYOffset, rand_offset]);
+                setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)*(1+(rand_offset/100))]);
+
                 let pathLength = paths[i].getTotalLength();
                
                 // adjuts dash and offset such that we hide the line
@@ -62,7 +72,7 @@ const DesignContainer = ({data,title,color, fontColor}) => {
 
                 pathLengths[i] = pathLength;
             }
-        });
+        }, 200);
 
 
 
@@ -98,7 +108,7 @@ const DesignContainer = ({data,title,color, fontColor}) => {
                 <h1>{title}</h1>
             </div>
 
-            <div className="flex-initial relative">
+            <div className="flex-initial relative test">
                 {data.map((design,index) => (
                     <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
                     
