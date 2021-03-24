@@ -1,21 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import CardImg from './CardImg';
 
 const DesignCard = ({design,docHeight,lineRandYOffset}) => {
 
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;
+    var ConditionalLink = design.link ? Link : React.DOM.div;
 
     if(design.type === 1){
         return(
-           <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " mb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
+           <div style={{width: design.card_width+"%"}} className={(design.link? 'cardLink' : '') + " cardContainer flex mt-" + design.spacing_top.toString() + " mb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
 
             
             <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative">
                 <svg viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
                     <line x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke="white" strokeWidth="1" />
                 </svg>
-                <CardImg src={design.img} size={design.img_size}/>      
+                <ConditionalLink to="/moodboards/avant_vibes">
+                    <CardImg src={design.img} size={design.img_size}/>      
+                </ConditionalLink>
             </div>
             <div className="textContainer flex-1"><p>{design.text_1}</p></div>
         </div>

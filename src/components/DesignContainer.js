@@ -4,7 +4,8 @@ import $ from 'jquery';
 import DesignCard from '../components/DesignCard';
 import Menu from '../components/Menu.js';
 
-const DesignContainer = ({data,title,color, fontColor}) => {  
+const DesignContainer = (props) => {  
+    const {data,title,color, fontColor} = props;
     const [docHeight, setDocHeight] = useState([]);
     const [lineRandYOffset, setLineRandYOffset] = useState([]);
     
