@@ -19,7 +19,7 @@ const AvantVibes = () => {
 
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   
-            $(this).delay((400+600) * (i+1)).fadeTo((600+600),1);
+            $(this).delay((750) * (i+1)).fadeTo((1000),1);
         });
         
     });

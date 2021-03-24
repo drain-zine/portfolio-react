@@ -25,8 +25,8 @@ const Menu = (props) => {
     return(
         <div className={"dropdown fixed flex flex-col m-8 p-3 z-30 draggable text-left text-" + props.fontColor}>
             <div className="menu">
-                <div><a href="/">Home</a></div>
-                <div><Link to="/moodboards/avant_vibes">Portfolio</Link></div>	
+                <div><Link to="/">Home</Link></div>
+                <div><Link to="/design">Design</Link></div>	
                 <div><a href="/contact.html">Contact</a></div>	
             </div>
 

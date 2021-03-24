@@ -16,6 +16,9 @@ export const data_raw = [
         img_size: 75,
         text_1: '',   
         text_2: '',
+
+        link: false,
+        link_url: ""
     },
 
     {
@@ -31,6 +34,9 @@ export const data_raw = [
         img: require("./../../assets/static/SupremeMain.png").default,
         img_size: 50,
         text_2: 'Here, the web designer has opted for a simple, high contrast colour scheme of black, white and red as well as saturated monochrome background photo. This makes the site highly readable, and when paired with the simple layout of the site it draws the viewer’s attention to the text content or photo content of the products. One could also draw the connection to this style of design to the physical retail location’s layout schema, opting for a simple uncrowded space where the products themselves are emphasized by the surronding negative spaces.',   
+    
+        link: false,
+        link_url: ""
     },
 
     {
@@ -46,6 +52,9 @@ export const data_raw = [
         img_size: 50,
         text_1: 'On the about page we see this strain of design continue, however with the primary content and background colours flipped. This breaks up the website, as well as providing distinct visual signatures for each page served to the user.',
         text_2: '', 
+    
+        link: false,
+        link_url: ""
     },
 
     {
@@ -61,6 +70,9 @@ export const data_raw = [
         img: require("./../../assets/static/AVarchive.png").default,
         img_size: 80,
         text_2: 'One could posit that the popularity of this style was due to the explosion of the web in the early 2000s. With the rise of web development as a profession, as well as software like adobe flash, a growing toolkit was available to designers and amateurs alike. This led to a proliferation of website templates and royalty free assets leading to heavy use of standarised tabular layouts featuring and dynamic elements such as gifs and animations.',   
+    
+        link: false,
+        link_url: ""
     },
 
     
@@ -77,6 +89,9 @@ export const data_raw = [
         img: require("./../../assets/static/FrogGallery.png").default,
         img_size: 40,
         text_2: 'Simultaneous to this, digital drawing and CGI software were becoming less expensive and less performance intense. This led to the heavy incorporation of graphic assets and backgrounds on sites, which was coupled with the increased use of bright primary and secondary colours, providing an element of contrast against chromatically busy pages. This was particularly popular among hobbyist and amateur websites, allowing one to create a unique site and potentially show off their own design work. Some elements of this practice were utilised in professional websites, specifically “themed” websites meant to promote products such as games, film and tv or to exist alongside these products as guides or the blossoming “wiki” site.',   
+    
+        link: false,
+        link_url: ""
     },
 
     {
@@ -92,6 +107,9 @@ export const data_raw = [
         img: require("./../../assets/static/WarcraftIndex.png").default,
         img_size: 70,
         text_2: '',   
+    
+        link: false,
+        link_url: ""
     },
 
     {
@@ -107,5 +125,8 @@ export const data_raw = [
         img: require("./../../assets/static/AVlinks.png").default,
         img_size: 80,
         text_2: '',   
+    
+        link: false,
+        link_url: ""
     },
 ];
