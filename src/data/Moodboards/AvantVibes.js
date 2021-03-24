@@ -129,4 +129,22 @@ export const data_raw = [
         link: false,
         link_url: ""
     },
+
+    {
+        key: 8,
+        type: 7,
+        spacing_top: y_spacing_half,
+        spacing_bottom: 28,
+        rand_x: false,
+        x_pos: 2,
+        card_width: 100,
+
+        text_1: 'Inspiration from sites such as Yvette’s Bridal, yyyyyyy and X was taken, examples of amateur 00s web design taken to its most extreme. Sites such as these have become a cultural meme, one which people collate, compare and catalogue under labels such as nightmare web design.',
+        text_2: 'Whilst incredibly loud sites with almost disorienting levels of dynamism through gifs, marquee and translating elements can lead one to label sites designed like this as nightmarish, one could also look past that surface level shock and find a style of design not to dissimilar to that of the provocative collages of the Dadaists or the psychogeographiques of the Situationist International.',   
+        text_3: 'Where these sites have been lambasted by practically every part of the web design and the mainstream internet community as a whole, their aesthetics and design practices have been mythologised across the nicher parts of the web, from their prominence in “creepy-pasta” stories, to use in ppages of avant-garde artists and a whole spectrum of forums.',
+        text_4: '',
+
+        link: false,
+        link_url: ""
+    },
 ];

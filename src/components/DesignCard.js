@@ -100,6 +100,17 @@ const DesignCard = ({design,docHeight,lineRandYOffset}) => {
                 </div>
             </div>
         );
+    }else if(design.type === 7){
+        return (
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " mb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
+                <div className="paragraphContainer flex-1 flex">
+                    <div id="col_1" className="textContainer flex-1 ml-1"><p>{design.text_1}</p></div>
+                    <div id="col_2" className="textContainer flex-1 ml-1"><p>{design.text_2}</p></div>
+                    <div id="col_3" className="textContainer flex-1 ml-1"><p>{design.text_3}</p></div>
+                    <div id="col_4" className="textContainer flex-1 ml-1"><p>{design.text_4}</p></div>
+                </div>
+            </div>
+        );
     }
 }
 
