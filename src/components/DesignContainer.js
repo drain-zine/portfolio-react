@@ -14,7 +14,7 @@ const DesignContainer = (props) => {
      useEffect(() => {
          /* INIT */
         // reset page to top
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
 
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;

@@ -15,7 +15,6 @@ const AvantVibes = () => {
     const [data] = useState(data_raw);
 
     useEffect(() => {
-        $(document).scrollTop(0);
 
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   

@@ -11,8 +11,6 @@ const Design = () => {
     const [data] = useState(data_raw);
 
     useEffect(() => {
-        $(document).scrollTop(0);
-
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   
             $(this).delay((500) * (i+1)).fadeTo((750),1);

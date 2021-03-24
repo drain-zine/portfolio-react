@@ -17,8 +17,6 @@ const AvantVibes = () => {
     const fadeDelay = 750;
 
     useEffect(() => {
-        $(document).scrollTop(0);
-
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   
             $(this).delay((fadeDelay) * (i+1)).fadeTo((fadeIn),1);
