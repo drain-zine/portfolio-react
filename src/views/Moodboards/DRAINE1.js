@@ -13,13 +13,15 @@ import {data_raw} from '../../data/Moodboards/DRAINE1.js';
 const AvantVibes = () => {
     // state decs
     const [data] = useState(data_raw);
+    const fadeIn = 800;
+    const fadeDelay = 750;
 
     useEffect(() => {
         $(document).scrollTop(0);
 
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   
-            $(this).delay((750) * (i+1)).fadeTo((1000),1);
+            $(this).delay((fadeDelay) * (i+1)).fadeTo((fadeIn),1);
         });
         
     });

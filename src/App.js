@@ -9,6 +9,7 @@ import './animations/slideTransition.scss';
 import Lander from './views/Lander';
 import Design from './views/Design';
 import AvantVibes from './views/Moodboards/AvantVibes';
+import DRAINE1 from './views/Moodboards/DRAINE1';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                   <Route path="/" exact component={Lander} />
                   <Route path="/design" exact component={Design} />
                   <Route path="/moodboards/avant_vibes" exact component={AvantVibes} />
+                  <Route path="/moodboards/drain_e1" exact component={DRAINE1} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
