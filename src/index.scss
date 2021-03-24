@@ -104,6 +104,12 @@ body{
   font-family: $secondary-heading-font;
 }
 
+.cardLink{
+  img{
+    cursor: pointer;
+  }
+}
+
 .menu div{
   opacity: 0;
 }

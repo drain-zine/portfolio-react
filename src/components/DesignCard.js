@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 import CardImg from './CardImg';
 
-const DesignCard = ({design,docHeight,lineRandYOffset}) => {
-
+const DesignCard = (props) => {
+    const {design,docHeight,lineRandYOffset} = props;
+    
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;
     const ConditionalLink = ({ children, to, condition }) => (!!condition && to)
       ? <Link to={to}>{children}</Link>

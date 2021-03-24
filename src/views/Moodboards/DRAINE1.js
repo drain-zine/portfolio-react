@@ -28,7 +28,7 @@ const AvantVibes = () => {
     
     return(
         <div>
-            <DesignContainer data={data} title={"Drain Edition 1"} color={"white"} fontColor={"black"} />
+            <DesignContainer data={data} title={"Drain E1"} color={"white"} fontColor={"black"} />
             <Menu fontColor={"black"}/>
         </div>
     );

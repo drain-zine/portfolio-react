@@ -45,8 +45,8 @@ export const data_raw = [
         spacing_top: y_spacing_half,
         spacing_bottom: 32,
         rand_x: false,
-        x_pos: -5,
-        card_width: 130,
+        x_pos: -2,
+        card_width: 120,
         
         text_1: 'The website’s choose-your-own-adventure narrative added a level of interactivity between the reader and the content that was being served to them, textually drawing inspiration from sources such as Fighting Fantasy, Point-and-click Adventure Games and Visual Novels.',
         text_2: 'Another point of inspiration was the Alternate Reality Game (ARG) which has seen a surge of popularity in the earlier 2010s. ARGs have been used across the internet, whether it is to promote albums, as a form of immersive online storytelling or as a set of challenges distributed across the web and beyond.', 

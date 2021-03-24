@@ -51,18 +51,19 @@ const DesignContainer = (props) => {
                 let rand_offset = 3+Math.floor(Math.random() * 4);
                 let card_y = cards[i].getBoundingClientRect().top;
                 setLineRandYOffset(lineRandYOffset => [...lineRandYOffset, rand_offset]);
+                
                 setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)*(1+(rand_offset/100))]);
 
-                let pathLength = paths[i].getTotalLength();
-               
+                let pathLength = (cardContainerParentHeight - card_y)*(1+(rand_offset/100));
+                
+                
                 // adjuts dash and offset such that we hide the line
                 paths[i].style.strokeDasharray = pathLength + ' ' + pathLength;
                 paths[i].style.strokeDashoffset = pathLength - startingLength; 
                 paths[i].style.stroke = fontColor;
-
                 pathLengths[i] = pathLength;
             }
-        }, 200);
+        }, 300);
 
 
 
