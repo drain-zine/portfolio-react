@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import $ from 'jquery'; 
 
-import DesignCard from './DesignCard';
-import Menu from './Menu.js';
+import DesignCard from '../components/DesignCard';
+import Menu from '../components/Menu.js';
 
-import {designs_raw} from './../data/Designs.js';
-
-const Design = () => {
-    // state decs
-    const [designs] = useState(designs_raw);
+const DesignContainer = (props) => {  
+    const {data,title,color, fontColor} = props;
     const [docHeight, setDocHeight] = useState([]);
     const [lineRandYOffset, setLineRandYOffset] = useState([]);
     
@@ -19,28 +16,16 @@ const Design = () => {
         // reset page to top
         window.scrollTo(0, 0);
 
-        /* Fade in Elements */
-        $(".cardContainer").each(function(i) {   
-            $(this).delay((400+600) * (i+1)).fadeTo((600+600),1);
-        });
-
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
         var cardContainerParentHeight = cardContainerParent.offsetHeight;
-        var sbHeight = window.innerHeight * (window.innerHeight / document.body.offsetHeight);
+       
         var startingLength = 3;
 
-        cardContainerParentHeight += 400;
-
+        /* cardContainerParentHeight += sbHeight; */
+      
+        
         var cards = document.getElementsByClassName("cardContainer");
-
-        // adjust heights of lines
-        for(let i = 0; i < cards.length; i++){
-            let rand_offset = 3+Math.floor(Math.random() * 4);
-            let card_y = cards[i].getBoundingClientRect().top;
-            setLineRandYOffset(lineRandYOffset => [...lineRandYOffset, rand_offset]);
-            setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)*(1+(rand_offset/100))]);
-        }
     
         // vars for scroll anim
         const paths = document.getElementsByClassName('line-path');
@@ -54,18 +39,30 @@ const Design = () => {
         // pre specify this -> allows us to address values
         var lastDrawLengths = new Array(cards.length);
 
+        /* setTimeout(function(){console.log("wawgwan: " + $("main").outerHeight(true));},200); */
+
         // wait until next tick -> if we do this immediately, dom renderer will have yet to scale path to doc height state and thus our line will have path length 0
-        process.nextTick(() => {
+        /* process.nextTick(() => { */
+        setTimeout(function(){
+            cardContainerParentHeight=$("main").outerHeight(true);
+            console.log("test timeout :): " + cardContainerParentHeight);
+           
             for(let i = 0; i < paths.length; i++){
+                let rand_offset = 3+Math.floor(Math.random() * 4);
+                let card_y = cards[i].getBoundingClientRect().top;
+                setLineRandYOffset(lineRandYOffset => [...lineRandYOffset, rand_offset]);
+                setDocHeight(docHeight => [...docHeight, (cardContainerParentHeight - card_y)*(1+(rand_offset/100))]);
+
                 let pathLength = paths[i].getTotalLength();
                
                 // adjuts dash and offset such that we hide the line
                 paths[i].style.strokeDasharray = pathLength + ' ' + pathLength;
                 paths[i].style.strokeDashoffset = pathLength - startingLength; 
-                
+                paths[i].style.stroke = fontColor;
+
                 pathLengths[i] = pathLength;
             }
-        });
+        }, 200);
 
 
 
@@ -95,22 +92,20 @@ const Design = () => {
         }     
       }, []);
 
-
     return(
-        <main className="lander page flex mt-24">
+        <main className={"bg-"+color + " text-"+ fontColor +" lander page flex pt-24"}>
             <div className="flex-initial inline-block ml-24 z-20 mr-0">
-                <h1>Design</h1>
+                <h1>{title}</h1>
             </div>
 
-            <div className="flex-initial relative">
-                {designs.map((design,index) => (
+            <div className="flex-initial relative test">
+                {data.map((design,index) => (
                     <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
                     
                 ))}
-            </div>
-
-            <Menu />
+            </div>       
         </main>
     );
 }
-export default Design;
+
+export default DesignContainer;
