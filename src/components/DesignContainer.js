@@ -15,11 +15,6 @@ const DesignContainer = ({data,title,color, fontColor}) => {
         // reset page to top
         window.scrollTo(0, 0);
 
-        /* Fade in Elements */
-        $(".cardContainer").each(function(i) {   
-            $(this).delay((400+600) * (i+1)).fadeTo((600+600),1);
-        });
-
         // set doc height state to scale line container
         var cardContainerParent = document.getElementsByClassName("cardContainer")[0].parentElement;
         var cardContainerParentHeight = cardContainerParent.offsetHeight;
@@ -30,12 +25,6 @@ const DesignContainer = ({data,title,color, fontColor}) => {
       
         
         var cards = document.getElementsByClassName("cardContainer");
-
-        // adjust heights of lines
-       
-        for(let i = 0; i < cards.length; i++){
-           
-        }
     
         // vars for scroll anim
         const paths = document.getElementsByClassName('line-path');

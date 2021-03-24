@@ -1,6 +1,6 @@
 var y_spacing = 80;
 
-export const designs_raw = [
+export const data_raw = [
     {
         key: 1,
         type: 1,

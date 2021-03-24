@@ -16,6 +16,12 @@ const AvantVibes = () => {
 
     useEffect(() => {
         $(document).scrollTop(0);
+
+        /* Fade in Elements */
+        $(".cardContainer").each(function(i) {   
+            $(this).delay((400+600) * (i+1)).fadeTo((600+600),1);
+        });
+        
     });
     
     return(
