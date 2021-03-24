@@ -25,7 +25,10 @@ const AvantVibes = () => {
     });
     
     return(
-        <DesignContainer data={data} title={"Avant Vibes"} color={"white"} fontColor={"black"} />
+        <div>
+            <DesignContainer data={data} title={"Avant Vibes"} color={"white"} fontColor={"black"} />
+            <Menu fontColor={"black"}/>
+        </div>
     );
 }
 export default AvantVibes;

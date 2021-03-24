@@ -21,7 +21,10 @@ const Design = () => {
     });
     
     return(
-        <DesignContainer data={data} title={"Designs"} color={"black"} fontColor={"white"} />
+        <div>
+            <DesignContainer data={data} title={"Designs"} color={"black"} fontColor={"white"} />
+            <Menu />
+        </div>
     );
 }
 export default Design;

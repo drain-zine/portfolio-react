@@ -102,9 +102,7 @@ const DesignContainer = ({data,title,color, fontColor}) => {
                     <DesignCard design={design} docHeight={docHeight[index]} lineRandYOffset={lineRandYOffset[index]}/>
                     
                 ))}
-            </div>
-
-            <Menu />
+            </div>       
         </main>
     );
 }
