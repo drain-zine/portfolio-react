@@ -28,7 +28,8 @@ export const data_raw = [
         text_1: 'Drain Zine Edition 1. An independent student zine focusing on the fringes of art, fashion and music culture. What will you find from down the drain?',
         img: require("./../assets/static/bird.png").default,
         text_2: '\"Welcome adventurer to this perilous realm. Danger lurks around every corner... however, if you can brave DRAIN\'s treacheries it is said great knowledge will be bestowed upon thee...\"',   
-        
+        img_size: 50,
+
         link: true,
         link_url: "/moodboards/avant_vibes"
     },
