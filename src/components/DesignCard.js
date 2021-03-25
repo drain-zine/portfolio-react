@@ -76,7 +76,9 @@ const DesignCard = (props) => {
                     <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
                         <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke="white" strokeWidth="1" />
                     </svg>
-                    <CardImg src={design.img} size={design.img_size}/>
+                    <ConditionalLink to={design.link_url} condition={design.link}>
+                        <CardImg src={design.img} size={design.img_size}/>      
+                    </ConditionalLink>
                 </div>
             </div>
         );

@@ -10,6 +10,7 @@ import Lander from './views/Lander';
 import Design from './views/Design';
 import AvantVibes from './views/Moodboards/AvantVibes';
 import DRAINE1 from './views/Moodboards/DRAINE1';
+import DRAINE2 from './views/Moodboards/DRAINE2';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                   <Route path="/design" exact component={Design} />
                   <Route path="/moodboards/avant_vibes" exact component={AvantVibes} />
                   <Route path="/moodboards/drain_e1" exact component={DRAINE1} />
+                  <Route path="/moodboards/drain_e2" exact component={DRAINE2} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
