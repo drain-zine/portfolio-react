@@ -136,7 +136,7 @@ export const data_raw = [
         spacing_top: y_spacing_half,
         spacing_bottom: 28,
         rand_x: false,
-        x_pos: 2,
+        x_pos: 1,
         card_width: 100,
 
         text_1: 'Inspiration from sites such as Yvette’s Bridal, yyyyyyy and X was taken, examples of amateur 00s web design taken to its most extreme. Sites such as these have become a cultural meme, one which people collate, compare and catalogue under labels such as nightmare web design.',

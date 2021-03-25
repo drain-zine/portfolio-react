@@ -146,14 +146,14 @@ const DesignCard = (props) => {
         return (
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos + " text-sm"}>
                 <div className="paragraphContainer flex-1 flex">
-                    <div id="col_1" className="textContainer flex-1 ml-1"><p>{design.text_1}</p></div>
-                    <div id="col_2" className="textContainer flex-1 ml-1"><p>{design.text_2}</p></div>
-                    <div id="col_3" className="textContainer flex-1 ml-1"><p>{design.text_3}</p></div>
-                    <div id="col_4" className="textContainer flex-1 ml-1"><p>{design.text_4}</p></div>
-                    <div id="col_5" className="textContainer flex-1 ml-1"><p>{design.text_5}</p></div>
-                    <div id="col_6" className="textContainer flex-1 ml-1"><p>{design.text_6}</p></div>
-                    <div id="col_7" className="textContainer flex-1 ml-1"><p>{design.text_7}</p></div>
-                    <div id="col_8" className="textContainer flex-1 ml-1"><p>{design.text_8}</p></div>
+                    <div id="col_1" className="textContainer flex-initial ml-1"><p>{design.text_1}</p></div>
+                    <div id="col_2" className="textContainer flex-initial ml-1"><p>{design.text_2}</p></div>
+                    <div id="col_3" className="textContainer flex-initial ml-1"><p>{design.text_3}</p></div>
+                    <div id="col_4" className="textContainer flex-initial ml-1"><p>{design.text_4}</p></div>
+                    <div id="col_5" className="textContainer flex-initial ml-1"><p>{design.text_5}</p></div>
+                    <div id="col_6" className="textContainer flex-initial ml-1"><p>{design.text_6}</p></div>
+                    <div id="col_7" className="textContainer flex-initial ml-1"><p>{design.text_7}</p></div>
+                    <div id="col_8" className="textContainer flex-initial ml-1"><p>{design.text_8}</p></div>
                 </div>
             </div>
         );
