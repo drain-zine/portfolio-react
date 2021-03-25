@@ -37,17 +37,18 @@ export const data_raw = [
 
     {
         key: 3,
-        type: 1,
+        type: 2,
         spacing_top: 80,
         spacing_bottom: 32,
         rand_x: true,
         x_pos: 1,
 
-        img: require("./../assets/dynamic/skeleton.gif").default,
-        text_1: 'Drain Zine Edition 1. An independent student zine focusing on the fringes of art, fashion and music culture. What will you find from down the drain?',
+        img: require("./../assets/static/tavern1.png").default,
+        text_1: 'DRAIN Edition 2. An independent choose-your-own-adventure zine, with several uniquely styled "locations" corresponding to the zine\'s themes.',
         text_2: '', 
+        img_size: 45,
         
         link: true,
-        link_url: "/moodboards/avant_vibes"
+        link_url: "/moodboards/drain_e2"
     },
 ];
