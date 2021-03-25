@@ -84,7 +84,7 @@ const DesignCard = (props) => {
     }else if(design.type === 3){
         return (
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
-                <div className="imgContainer relative flex-2">
+                <div style={{width: design.img_size+"%"}} className="imgContainer relative flex-2">
                 <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
                         <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke="white" strokeWidth="1" />
                     </svg>
