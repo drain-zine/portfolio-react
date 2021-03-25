@@ -8,24 +8,25 @@ import React from 'react';
 import DesignContainer from '../../components/DesignContainer';
 
 
-import {data_raw} from '../../data/Moodboards/AvantVibes.js';
+import {data_raw} from '../../data/Moodboards/DRAINE1.js';
 
 const AvantVibes = () => {
     // state decs
     const [data] = useState(data_raw);
+    const fadeIn = 800;
+    const fadeDelay = 750;
 
     useEffect(() => {
-
         /* Fade in Elements */
         $(".cardContainer").each(function(i) {   
-            $(this).delay((750) * (i+1)).fadeTo((1000),1);
+            $(this).delay((fadeDelay) * (i+1)).fadeTo((fadeIn),1);
         });
         
     });
     
     return(
         <div>
-            <DesignContainer data={data} title={"Avant Vibes"} color={"white"} fontColor={"black"} />
+            <DesignContainer data={data} title={"Drain E1"} color={"white"} fontColor={"black"} />
             <Menu fontColor={"black"}/>
         </div>
     );
