@@ -8,6 +8,9 @@ import './animations/slideTransition.scss';
 
 import Lander from './views/Lander';
 import Design from './views/Design';
+import Contact from './views/Contact';
+import ScrollToTop from './components/ScrollToTop'
+
 import AvantVibes from './views/Moodboards/AvantVibes';
 import DRAINE1 from './views/Moodboards/DRAINE1';
 import DRAINE2 from './views/Moodboards/DRAINE2';
@@ -34,13 +37,16 @@ function App() {
           return (
             <TransitionGroup component={null}>
               <CSSTransition key={currentKey} timeout={timeout} classNames="pageSlider" mountOnEnter={true} unmountOnExit={true}>
+                <ScrollToTop>
                 <Switch location={location}>
                   <Route path="/" exact component={Lander} />
                   <Route path="/design" exact component={Design} />
+                  <Route path="/contact" exact component={Contact} />
                   <Route path="/moodboards/avant_vibes" exact component={AvantVibes} />
                   <Route path="/moodboards/drain_e1" exact component={DRAINE1} />
                   <Route path="/moodboards/drain_e2" exact component={DRAINE2} />
                 </Switch>
+                </ScrollToTop>
               </CSSTransition>
             </TransitionGroup>
           )

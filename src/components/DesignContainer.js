@@ -14,35 +14,40 @@ const DesignContainer = (props) => {
         var scrollUp = false;
 
         // pre specify this -> allows us to address values
-        var lastDrawLengths = new Array(paths.length);
+        var lastDrawLengths = new Array(paths.length).fill(0);
+        console.log(lastDrawLengths[0]);
 
         // scroll event handler
-        window.onscroll = () => {
+        const animatePaths = () => {
             var drawLength = 0;
             var st = window.pageYOffset || document.documentElement.scrollTop;
             // check if scrolling down
-            if(st > lastScrollTop){
-                // handle drawing of each path
-                
+            if(st >= lastScrollTop){
+                // handle drawing of each path  
                 for(let i = 0; i < paths.length; i++){
                     let pathLength = paths[i].getTotalLength();
+                    drawLength = pathLength * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
                     // only apply if scrolling down, and if beyond current line
-                    if(!scrollUp || drawLength >= lastDrawLengths[i]){
-                        drawLength = pathLength * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
-                        console.log("p: " + pathLength + " d: " + drawLength);
+                    /* console.log("draw: " + drawLength + " last: " + lastDrawLengths[i]); */
+                    if(drawLength >= lastDrawLengths[i]){
+                       /*  console.log("path: " + pathLength + " draw: " + drawLength); */
                         paths[i].style.strokeDashoffset = pathLength - drawLength;
                     
                         // update last draw lengths
                         lastDrawLengths[i] = drawLength;
                     }
                 }
-            }else{
-                scrollUp = true;
             }
-            
-            // for mobile devices
-            lastScrollTop = st <= 0 ? 0 : st;
-        }     
+            // update lastScrollTop
+            lastScrollTop = st;
+        }  
+
+        window.addEventListener('scroll', animatePaths, false);
+        
+        return function cleanup() {
+            window.removeEventListener('scroll', animatePaths, false);
+        };
+
       }, []);
 
     return(
