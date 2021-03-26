@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import $ from 'jquery'; 
    
 const useLineInit= (myRef) => {
@@ -6,9 +8,11 @@ const useLineInit= (myRef) => {
     const [strokeDasharray, setStrokeDasharray] = useState(0);
     const [strokeDashoffset, setStrokeDashoffset] = useState(0);
     const [lineRandYOffset, setLineRandYOffset] = useState(0);
+    let location = useLocation();
   
     const handleInit= () => {
         var startingLength = 3;
+        
 
         var card = myRef.current.parentElement.parentElement;
         
@@ -31,6 +35,7 @@ const useLineInit= (myRef) => {
         setStrokeDashoffset(pathLength - startingLength);
     }
   
+    // on init load
     useEffect(() => {
       myRef.current && window.addEventListener('load', handleInit);
   
@@ -38,8 +43,18 @@ const useLineInit= (myRef) => {
         window.removeEventListener('load', handleInit);
       }
     }, [myRef])
+
+    // on route change
+    useEffect(() => {
+      console.log("route change");
+      myRef.current && handleInit();
+  
+      return () => {
+        /* window.removeEventListener('load', handleInit); */
+      }
+    }, [myRef, location])
   
     return { docHeight, strokeDasharray, strokeDashoffset, lineRandYOffset };
 }
 
-export default  useLineInit;
+export default useLineInit;
