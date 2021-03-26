@@ -11,7 +11,6 @@ const DesignContainer = (props) => {
 
         // vars for upward scrolling behaviour
         var lastScrollTop = 0;
-        var scrollUp = false;
 
         // pre specify this -> allows us to address values
         var lastDrawLengths = new Array(paths.length).fill(0);

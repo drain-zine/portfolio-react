@@ -11,7 +11,7 @@ const Lander = () => {
                     <h1 className="link ml-24">Design</h1>
                 </Link>
                 <h1 className="link ml-16">Art</h1>
-                <h1 className="link ml-8">Contact</h1>
+                <Link to="/contact"><h1 className="link ml-8">Contact</h1></Link>
             </div>
 
             <div className="videoContainer absolute z-0">

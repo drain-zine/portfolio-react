@@ -27,7 +27,7 @@ const Menu = (props) => {
             <div className="menu">
                 <div><Link to="/">Home</Link></div>
                 <div><Link to="/design">Design</Link></div>	
-                <div><a href="/contact.html">Contact</a></div>	
+                <div><Link to="/contact">Contact</Link></div>	
             </div>
 
             <div className="menuBtn cursor-pointer">
