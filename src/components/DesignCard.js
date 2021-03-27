@@ -18,17 +18,25 @@ const DesignCard = (props) => {
 
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;
     
-    useLayoutEffect(() => {
+   useEffect(() => {
         let finishedLoad = (index === (cardN-1)) ? true : false;
         console.log("[LOAD CHECK] CARD: " + (index+1) + "/" + cardN + " LOADED: " + finishedLoad);
        
         if(finishedLoad){
-            setTimeout(() => {
+            console.log("[CARD]: " + $("main").outerHeight(true));
             setContainerHeight($("main").outerHeight(true));
-            console.log("[CARD]: " + $("main").outerHeight(true));},10);
             setFinishedLoad(finishedLoad);
         }
-    },[index])
+
+        return () => {
+           /*  window.removeEventListener('resize', function(){ */
+                setContainerHeight($("main").outerHeight(true));
+               /*  console.log("[CARD]: " + $("main").outerHeight(true));}); */
+          }
+    },[index]) 
+
+    
+
 
     if(design.type === 1){
         return(
