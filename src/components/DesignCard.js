@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import $ from 'jquery'; 
 import CardImg from './CardImg';
@@ -6,14 +6,29 @@ import  useLineInit  from '../hooks/useLineInit'
 import  ConditionalLink from './ConditionalLink'
 
 const DesignCard = (props) => {
-    const {design,fontColor} = props;
-    
+    const {design,fontColor,cardN,index} = props;
+
     const ref = useRef(null);
-    const { docHeight, strokeDasharray, strokeDashoffset, lineRandYOffset } =  useLineInit(ref)
+    const [finishedLoad, setFinishedLoad] = useState(0);
+    const [containerHeight, setContainerHeight] = useState(0);
+
+
+    const { docHeight, strokeDasharray, strokeDashoffset, lineRandYOffset } =  useLineInit(ref,containerHeight);
 
 
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;
     
+    useLayoutEffect(() => {
+        let finishedLoad = (index === (cardN-1)) ? true : false;
+        console.log("[LOAD CHECK] CARD: " + (index+1) + "/" + cardN + " LOADED: " + finishedLoad);
+       
+        if(finishedLoad){
+            setTimeout(() => {
+            setContainerHeight($("main").outerHeight(true));
+            console.log("[CARD]: " + $("main").outerHeight(true));},10);
+            setFinishedLoad(finishedLoad);
+        }
+    },[index])
 
     if(design.type === 1){
         return(

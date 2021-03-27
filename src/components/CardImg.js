@@ -6,9 +6,9 @@ import React, { useRef, useEffect } from 'react';
 // anothe markup element of the same img, set to invisible.
 const CardImg= ({src,size}) => {
     const ref = useRef(null);
-    useEffect(() => {
+ /*    useEffect(() => {
       console.log('width', ref.current ? ref.current.offsetWidth : 0);
-    }, [ref.current]);
+    }, [ref.current]); */
 
     return(
         <div>
