@@ -1,10 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-
-
+import React from 'react';
 
 const InfoOnHover = (props) => {
     const {data} = props;
-    const ref = useRef(0);
     const active_z = "z-10";
     const hidden_z = "z-0";
 
@@ -40,7 +37,7 @@ const InfoOnHover = (props) => {
     }
 
     return(
-        <div  ref={ref} id={data.type} className="relative cursor-pointer" onMouseOver={displayInfo} onMouseOut={resetImg} >
+        <div id={data.type} className="relative cursor-pointer" onMouseOver={displayInfo} onMouseOut={resetImg} >
             <img className={data.type+"-org "+ active_z + " top-0 absolute  w-" + data.size} src={data.src}/>
             {/* <img  className={"invisible inline w-" + data.size} src={data.src}/> */}
             <img className={data.type+"-active "+ hidden_z + " top-0 absolute w-" + data.size} src={data.active_src}/>
