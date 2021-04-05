@@ -25,15 +25,9 @@ const DesignCard = (props) => {
         if(finishedLoad){
             console.log("[CARD]: " + $("main").outerHeight(true));
             setContainerHeight($("main").outerHeight(true));
-            setFinishedLoad(finishedLoad);
         }
 
-        return () => {
-           /*  window.removeEventListener('resize', function(){ */
-                setContainerHeight($("main").outerHeight(true));
-               /*  console.log("[CARD]: " + $("main").outerHeight(true));}); */
-          }
-    },[index]) 
+    },[index]);
 
     
 
