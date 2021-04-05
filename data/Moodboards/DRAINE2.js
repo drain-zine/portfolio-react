@@ -12,7 +12,7 @@ export const data_raw = [
         x_pos: -1,
         card_width: 100,
 
-        img: require("./../../assets/dynamic/DrainE2Intro.gif").default,
+        img: "/assets/dynamic/DrainE2Intro.gif",
         img_size: 80,
         text_1: 'Presented is some teaser content from Drain Edition 2. The zine’s visual style has been massively expanded to feature more graphic elements, JavaScript animations, games, sound and more.',   
         text_2: '',
@@ -31,7 +31,7 @@ export const data_raw = [
         card_width: 110,
 
         text_1: 'An example content page from one “location” in the zine, The Ye Olde Fountain, containing a piece of flavour text and presenting a riddle solving game.',
-        img: require("./../../assets/static/DrainE2FountainWorks.png").default,
+        img: "/assets/static/DrainE2FountainWorks.png",
         img_size: 70,
         text_2: '',
     
@@ -49,7 +49,7 @@ export const data_raw = [
         card_width: 60,
 
         text_1: 'A dice rolling game from the same location where once the button is pressed the dice roll, prompting the orc to say something and the score to be drawn onto the parchment to the right.',
-        img: require("./../../assets/dynamic/DrainE2Orc.gif").default,
+        img: "/assets/dynamic/DrainE2Orc.gif",
         img_size: 80,
         text_2: '',
         
@@ -67,7 +67,7 @@ export const data_raw = [
         x_pos: -1,
         card_width: 100,
 
-        img: require("./../../assets/static/DrainE2LinkedLounge.png").default,
+        img: "/assets/static/DrainE2LinkedLounge.png",
         img_size: 80,
         text_1: 'Here we see another location within the zine, “The LinkedLounge”, this one a clear pastiche of bland corporate webportals. This features a scrolling slideshow of stock images on the banner, a share to LinkedIn function and more.',   
         text_2: '',
@@ -86,7 +86,7 @@ export const data_raw = [
         x_pos: 0,
         card_width: 75,
 
-        img: require("./../../assets/static/DrainE2LinkedLoungeTeam.png").default,
+        img: "/assets/static/DrainE2LinkedLoungeTeam.png",
         img_size: 60,
         text_1: '',   
         text_2: 'Here is an example of an interactive page on the LinkedLounge, this one providing information about the board members of the fictional corporation when their portraits are selected or hovered over with the cursor',
@@ -104,7 +104,7 @@ export const data_raw = [
         x_pos: 5,
         card_width: 50,
 
-        img: require("./../../assets/dynamic/DrainE2Hover.gif").default,
+        img: "/assets/dynamic/DrainE2Hover.gif",
         img_size: 100,
         text_1: '',   
         text_2: '',

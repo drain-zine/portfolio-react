@@ -1,17 +1,16 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+
 
 import InfoOnHover from './../components/InfoOnHover';
 import { data } from './../data/Contact';
 
-import titleImage from './../assets/static/contact.png';
 
 const Contact = () => {
     return(
         <main className="lander page">
             
             <div className="titleImage">
-                <img className="w-1/2" src={titleImage}/>
+                <img className="w-1/2" src='/assets/static/contact.png'/>
             </div>
             <div className="contactInfoContainer relative">
                 {/* <img id="email" className="w-1/4" src={emailImage}/> */}

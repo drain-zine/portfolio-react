@@ -12,7 +12,7 @@ export const data_raw = [
         x_pos: -1,
         card_width: 100,
 
-        img: require("./../../assets/static/drainArticle.png").default,
+        img: "/assets/static/drainArticle.png",
         img_size: 80,
         text_1: 'Drain Edition 1 design inspiration came from the cultural magazine 032c. The 032c schema utilised black bacgrounds with white text and accents, creating an easy to read, high contrast page. Red was also used for banners and flourishes, highlighting them on the otherwise duotone pages.',   
         text_2: 'For drain this schema was tweaked; taking the black background and white text however compressing the text into a central column 1/3 of the screen width. This emulated the look of a newspaper column, as well as enveloping the content in negative space creating a figure-ground relationship between text and the site as a whole, thus occupying the reader’s full frame of perception.',
@@ -31,7 +31,7 @@ export const data_raw = [
         card_width: 60,
 
         text_1: 'The 032c schema was further changed by implementing a pure RGB pallete for flourishes as opposed to only red. This added variation to the links of the site whilst still maintaining overall contrast, as well as further complementing the visual aesthetic of the site. Low-poly and 128bit colour clipart renders were used for link thumbnails, to further cement the main design cue of the choose-your-own-adventure. ARGs and DIY adventure websites, particularly those built on angelfire, were the main inspiration for this.',
-        img: require("./../../assets/dynamic/wizardChilling.gif").default,
+        img: "/assets/dynamic/wizardChilling.gif",
         img_size: 40,
         
     
@@ -74,7 +74,7 @@ export const data_raw = [
         card_width: 50,
 
         text_1: '',
-        img: require("./../../assets/static/legaultAdventure.png").default,
+        img: "/assets/static/legaultAdventure.png",
         img_size: 60,
         text_2: '',   
     
@@ -92,7 +92,7 @@ export const data_raw = [
         x_pos: 3,
         card_width: 100,
 
-        img: require("./../../assets/static/drainIndex.png").default,
+        img: "/assets/static/drainIndex.png",
         img_size: 80,
         text_1: '',   
         text_2: '',

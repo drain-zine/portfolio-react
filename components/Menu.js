@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'next/link';
+import  Link  from 'next/link';
 
 import $ from 'jquery'; 
 
@@ -25,13 +25,13 @@ const Menu = (props) => {
     return(
         <div className={"dropdown fixed flex flex-col m-8 p-3 z-30 draggable text-left text-" + props.fontColor}>
             <div className="menu">
-                {/* <div><Link href="/">Home</Link></div>
-                <div><Link href="/design">Design</Link></div>	
-                <div><Link href="/contact">Contact</Link></div>	 */}
-
+                <div><Link href="/"><a>Home</a></Link></div>
+                <div><Link href="/design"><a>Design</a></Link></div>	
+                <div><Link href="/contact"><a>Contact</a></Link></div>	
+{/* 
 <               div>Home</div>
                 <div>Design</div>	
-                <div>Contact</div>	
+                <div>Contact</div>	 */}
             </div>
 
             <div className="menuBtn cursor-pointer">
