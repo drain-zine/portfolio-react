@@ -12,11 +12,14 @@ const InfoOnHover = (props) => {
         var stage = document.getElementById("info");
         stage.innerHTML = data.info;
 
-        if(stage.classList.contains("invisible"))
+        if(stage.classList.contains("invisible")){
             stage.classList.remove("invisible");
+            stage.classList.add("fade-in");           
+        }
 
         var org = document.getElementsByClassName(data.type + "-org")[0];
         var active = document.getElementsByClassName(data.type + "-active")[0];
+
         org.classList.remove(active_z);
         org.classList.add(hidden_z);
 
@@ -26,11 +29,15 @@ const InfoOnHover = (props) => {
 
     // reset info
     function resetImg(){
+        var stage = document.getElementById("info");
+
         var org = document.getElementsByClassName(data.type + "-org")[0];
         var active = document.getElementsByClassName(data.type + "-active")[0];
 
         active.classList.remove(active_z);
         active.classList.add(hidden_z);
+
+        //stage.classList.add("fade-out");
 
         org.classList.remove(hidden_z);
         org.classList.add(active_z);

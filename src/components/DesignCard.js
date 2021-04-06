@@ -1,19 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React from 'react';
 
-import $ from 'jquery'; 
 import CardImg from './CardImg';
 import  useLineInit  from '../hooks/useLineInit'
 import  ConditionalLink from './ConditionalLink'
 
 const DesignCard = (props) => {
-    const {design,fontColor,cardN,index} = props;
-
-    const ref = useRef(null);
-    const [finishedLoad, setFinishedLoad] = useState(0);
-    const [containerHeight, setContainerHeight] = useState(0);
-
-
-    const { docHeight, strokeDasharray, strokeDashoffset, lineRandYOffset } =  useLineInit(ref,containerHeight);
+    const {design } = props;
 
 
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;

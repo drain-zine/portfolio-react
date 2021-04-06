@@ -5,6 +5,7 @@ import InfoOnHover from './../components/InfoOnHover';
 import { data } from './../data/Contact';
 
 import titleImage from './../assets/static/contact.png';
+import './../animations/fade.scss';
 
 const Contact = () => {
     return(
