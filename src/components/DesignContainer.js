@@ -52,7 +52,7 @@ const DesignContainer = (props) => {
 
 
     return(
-        <main className={"bg-"+color + " text-"+ fontColor +" lander flex pt-24 " + (noisy ? "noisy" : "")}>
+        <main className={"text-"+ fontColor +" lander flex pt-24 " + (noisy ? "noisy" : "")}>
             <div className="flex-initial inline-block ml-24 z-20 mr-0 relative">
                 <h1 id="title">{title}</h1>
                 <ScrollableLine fontColor={fontColor} />
