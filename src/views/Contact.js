@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import InfoOnHover from './../components/InfoOnHover';
+import Menu from './../components/Menu';
 import { data } from './../data/Contact';
 
 import titleImage from './../assets/static/contact.png';
@@ -9,10 +10,10 @@ import './../animations/fade.scss';
 
 const Contact = () => {
     return(
-        <main className="lander page">
+        <main className="lander absolute h-screen noisy">
             
             <div className="titleImage">
-                <img className="w-1/2" src={titleImage}/>
+                <img src={titleImage}/>
             </div>
             <div className="contactInfoContainer relative">
                 {/* <img id="email" className="w-1/4" src={emailImage}/> */}
@@ -32,6 +33,7 @@ const Contact = () => {
                     <p id="info" className="invisible">TEST</p>
                 </div>
             </div>
+            <Menu />
 
         </main>
     );

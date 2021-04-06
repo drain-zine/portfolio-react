@@ -16,13 +16,10 @@ const ScrollableLine = (props) => {
         if(ref.current && ref.current.parentElement.offsetHeight){
             var startingLength = 3;
 
-            var pathLength = 0;
 
             let rand_offset = 3+Math.floor(Math.random() * 4);
             setLineRandYOffset(rand_offset);
-        
 
-            
             var pathLength = ref.current.parentElement.offsetHeight;
             console.log("[INIT LINE] INIT LINE Height:  " + pathLength);
 
@@ -34,7 +31,7 @@ const ScrollableLine = (props) => {
 
     return(
         <svg ref={ref} viewBox={"0 0 100 " + lineHeight} className="absolute z-0" id="line-svg" height="100%" style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-            <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path-test" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset}/>
+            <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path-test" fill="none" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset}/>
         </svg>
     );
 }
