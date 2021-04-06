@@ -48,6 +48,7 @@ $design-page-font-size: 1.25rem;
 html{
   font-size: 16px;
   background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=000000ff&noise=626262&density=94&opacity=15);
+  cursor: crosshair;
 }
 
 body, html{
@@ -60,7 +61,7 @@ body{
   overflow-x: hidden;  
 }
 
-h1{
+h1, p#info{
   font-family: 'Cloister';
 }
 svg > line{
@@ -193,6 +194,14 @@ svg > line{
 
   top: 65vh;
   left: 40%;
+}
+
+#energyGrid{
+  position: absolute;
+  left: 23%;
+  top: 2%;
+  width: 35%;
+  opacity: 15%;
 }
 
 #psychogeographie{

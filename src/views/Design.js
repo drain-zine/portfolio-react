@@ -5,7 +5,7 @@ import DesignContainer from '../components/DesignContainer';
 import Menu from '../components/Menu';
 
 import {data_raw} from '../data/Designs.js';
-
+import energyGrid from '../assets/static/energyGrid.png';
 import psychogeographie from '../assets/static/psychogeographie2.png';
 import fluxusPurge from '../assets/static/fluxusPurge.png';
 
@@ -26,7 +26,7 @@ const Design = () => {
             <DesignContainer data={data} title={"Designs"} noisy={true} />
             
             {/* backing images */}
-
+            <img id="energyGrid" src={energyGrid} />
             <img id="psychogeographie" src={psychogeographie} />
             <img id="fluxusPurge" src={fluxusPurge} />
             <Menu />
