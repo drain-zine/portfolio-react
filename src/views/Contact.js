@@ -9,10 +9,10 @@ import './../animations/fade.scss';
 
 const Contact = () => {
     return(
-        <main className="lander page">
+        <main className="lander absolute">
             
             <div className="titleImage">
-                <img className="w-1/2" src={titleImage}/>
+                <img src={titleImage}/>
             </div>
             <div className="contactInfoContainer relative">
                 {/* <img id="email" className="w-1/4" src={emailImage}/> */}

@@ -4,7 +4,7 @@ import DesignCard from '../components/DesignCard';
 import ScrollableLine from './ScrollableLine';
 
 const DesignContainer = (props) => {  
-    const {data,title,color, fontColor} = props;
+    const {data,title,color, fontColor, noisy} = props;
 
         // animate lines
         useEffect(() => {
@@ -52,7 +52,7 @@ const DesignContainer = (props) => {
 
 
     return(
-        <main className={"bg-"+color + " text-"+ fontColor +" lander page flex pt-24"}>
+        <main className={"bg-"+color + " text-"+ fontColor +" lander flex pt-24 " + (noisy ? "noisy" : "")}>
             <div className="flex-initial inline-block ml-24 z-20 mr-0 relative">
                 <h1>{title}</h1>
                 <ScrollableLine fontColor={fontColor} />
@@ -67,6 +67,12 @@ const DesignContainer = (props) => {
             </div>       
         </main>
     );
+}
+
+DesignContainer.defaultProps = {
+    color: "black",
+    fontColor: "white",
+    noisy: false
 }
 
 export default DesignContainer;

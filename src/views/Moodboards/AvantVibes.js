@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import $ from 'jquery'; 
 
-import DesignCard from '../../components/DesignCard';
+import Grid from '../../components/Grid';
 import Menu from '../../components/Menu.js';
 import React from 'react';
 
@@ -25,8 +25,9 @@ const AvantVibes = () => {
     
     return(
         <div>
-            <DesignContainer data={data} title={"Avant Vibes"} color={"white"} fontColor={"black"} />
-            <Menu fontColor={"black"}/>
+            <DesignContainer data={data} title={"Avant Vibes"}/>
+            <Grid />
+            <Menu />
         </div>
     );
 }
