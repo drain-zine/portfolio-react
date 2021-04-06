@@ -24,6 +24,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'Cloister';
+  src: url("./fonts/CloisterBlack.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 $primary-text-color: white;
 $secondary-text-color: red;
 $tertiary-text-color: DarkGray;
@@ -53,6 +60,9 @@ body{
   overflow-x: hidden;  
 }
 
+h1{
+  font-family: 'Cloister';
+}
 svg > line{
   stroke-width: 1px;
   stroke:rgb(255, 255, 255, 0.8);
