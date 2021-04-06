@@ -64,6 +64,11 @@ body{
 h1, p#info{
   font-family: 'Cloister';
 }
+
+.home > h1{
+  font-size: 18rem;
+  line-height: 14rem;
+}
 svg > line{
   stroke-width: 1px;
   stroke:rgb(255, 255, 255, 0.8);

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import InfoOnHover from './../components/InfoOnHover';
+import Menu from './../components/Menu';
 import { data } from './../data/Contact';
 
 import titleImage from './../assets/static/contact.png';
@@ -32,6 +33,7 @@ const Contact = () => {
                     <p id="info" className="invisible">TEST</p>
                 </div>
             </div>
+            <Menu />
 
         </main>
     );
