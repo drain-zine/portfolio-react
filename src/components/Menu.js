@@ -15,7 +15,6 @@ const Menu = (props) => {
         });
 
         $(".dropdown").mouseleave(function(){
-            console.log("Hello");
             $(".menu div").each(function(i) {   
                 $(this).delay(props.delayTime * i).fadeTo(props.fadeTime,0);
             });

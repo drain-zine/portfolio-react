@@ -13,6 +13,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-transition-group": "^4.4.1",
+    "sass": "^1.32.8",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -47,6 +48,7 @@
     "next-tick": "^1.0.0",
     "postcss": "^7.0.35",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+    "react-snap": "^1.23.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   }
 }
