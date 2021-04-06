@@ -17,20 +17,6 @@ const DesignCard = (props) => {
 
 
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;
-    
-   useEffect(() => {
-        let finishedLoad = (index === (cardN-1)) ? true : false;
-        console.log("[LOAD CHECK] CARD: " + (index+1) + "/" + cardN + " LOADED: " + finishedLoad);
-       
-        if(finishedLoad){
-            console.log("[CARD]: " + $("main").outerHeight(true));
-            setContainerHeight($("main").outerHeight(true));
-        }
-
-    },[index]);
-
-    
-
 
     if(design.type === 1){
         return(
@@ -38,9 +24,6 @@ const DesignCard = (props) => {
 
             
             <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative">
-                <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-                    <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset}/>
-                </svg>
                 <ConditionalLink to={design.link_url} condition={design.link}>
                     <CardImg src={design.img} size={design.img_size}/>      
                 </ConditionalLink>
@@ -55,9 +38,6 @@ const DesignCard = (props) => {
 
                 <div className="textContainer flex-1"><p>{design.text_1}</p></div>
                 <div style={{width: design.img_size+"%"}} className="imgContainer relative">
-                    <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-                        <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset} />
-                    </svg>
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
                     </ConditionalLink>
@@ -69,9 +49,6 @@ const DesignCard = (props) => {
         return (
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
                 <div style={{width: design.img_size+"%"}} className="imgContainer relative flex-2">
-                <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-                        <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset} />
-                    </svg>
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
                     </ConditionalLink>
@@ -87,9 +64,6 @@ const DesignCard = (props) => {
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
 
                 <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative">
-                    <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-                        <line x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset} />
-                    </svg>
                     <CardImg src={design.img} size={design.img_size}/>
                 </div>
             </div>
@@ -98,9 +72,6 @@ const DesignCard = (props) => {
         return (
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
                 <div style={{width: design.img_size+"%"}} className="imgContainer relative flex-1">
-                    <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-                        <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset} />
-                    </svg>
                     <CardImg src={design.img} size={design.img_size}/>
                     
                 </div>
@@ -118,9 +89,6 @@ const DesignCard = (props) => {
                     <div id="row_2" className="textContainer flex-initial mt-3 ml-1"><p>{design.text_2}</p></div>
                 </div>
                 <div style={{width: design.img_size+"%"}} className="imgContainer flex-inital relative">
-                    <svg ref={ref} viewBox={"0 0 100 " + docHeight} className="absolute z-0" id="line-svg" height={docHeight} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
-                        <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path" fill="none" stroke= {fontColor} strokeWidth="1" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset} />
-                    </svg>
                     <CardImg src={design.img} size={design.img_size}/>
                     
                 </div>
