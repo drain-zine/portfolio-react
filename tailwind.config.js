@@ -1,5 +1,5 @@
 const whitelist = ["bg-white", "bg-black", "text-black", "text-white"];
-const whitelistPatterns = [/^mt/, /^mb/, /^pt/, /^pb/];
+const whitelistPatterns = [/^mt/, /^mb/, /^pt/, /^pb/, /^w/];
 
 module.exports = {
   purge:  { 
