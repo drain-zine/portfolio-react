@@ -32,7 +32,7 @@ export const data = [
         type: "github",
         src: require("./../assets/static/github.png").default,
         active_src: require("./../assets/static/github_active.png").default,
-        info: "link",
+        info: "https://github.com/drain-zine",
         size: "1/6",
     }
 ];

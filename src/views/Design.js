@@ -23,7 +23,7 @@ const Design = () => {
     
     return(
         <div className="relative flex flex-col noisy">
-            <DesignContainer data={data} title={"Designs"} noisy={true} />
+            <DesignContainer data={data} title={"Design"} noisy={true} />
             
             {/* backing images */}
             <img id="energyGrid" src={energyGrid} />
