@@ -9,7 +9,7 @@ import './../animations/fade.scss';
 
 const Contact = () => {
     return(
-        <main className="lander absolute">
+        <main className="lander absolute h-screen noisy">
             
             <div className="titleImage">
                 <img src={titleImage}/>

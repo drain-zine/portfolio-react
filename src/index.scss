@@ -40,6 +40,7 @@ $design-page-font-size: 1.25rem;
 
 html{
   font-size: 16px;
+  background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=000000ff&noise=626262&density=94&opacity=15);
 }
 
 body, html{
@@ -50,6 +51,11 @@ body, html{
 // hide horiz scrollbar on slide transistion
 body{
   overflow-x: hidden;  
+}
+
+svg > line{
+  stroke-width: 1px;
+  stroke:rgb(255, 255, 255, 0.8);
 }
 
 .lander{

@@ -25,7 +25,7 @@ const AvantVibes = () => {
     
     return(
         <div>
-            <DesignContainer data={data} title={"Avant Vibes"}/>
+            <DesignContainer data={data} title={"Avant Vibes"} noisy={true}/>
             <Grid />
             <Menu />
         </div>
