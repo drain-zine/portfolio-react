@@ -52,13 +52,13 @@ const DesignContainer = (props) => {
 
 
     return(
-        <main className={"text-"+ fontColor +" lander flex pt-24 " + (noisy ? "noisy" : "")}>
-            <div className="flex-initial inline-block ml-24 z-20 mr-0 relative">
+        <main className={"text-"+ fontColor +" lander flex lg:pt-24 " + (noisy ? "noisy " : "") + "mmd:flex mmd:justify-center mmd:flex-col mmd:pt-12"}>
+            <div className="flex-initial lg:inline-block lg:ml-24 z-20 lg:mr-0 relative mmd:text-center">
                 <h1 id="title">{title}</h1>
                 <ScrollableLine fontColor={fontColor} />
             </div>
 
-            <div className="flex-initial relative test">
+            <div className="flex-initial relative test mmd:text-center">
                 {data.map((design,index) => (
 
                     <DesignCard design={design} fontColor={fontColor} cardN={data.length} index={index}/>

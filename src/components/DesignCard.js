@@ -12,7 +12,7 @@ const DesignCard = (props) => {
 
     if(design.type === 1){
         return(
-           <div style={{width: design.card_width+"%"}} className={(design.link? 'cardLink' : '') + " cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
+           <div style={{width: design.card_width+"%"}} className={(design.link? 'cardLink' : '') + " cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:mlr-"+pos + " mmd:flex-col mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48"}>
 
             
             <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative">
@@ -26,10 +26,10 @@ const DesignCard = (props) => {
         );
     }else if(design.type === 2){
         return(
-            <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:mlr-"+pos  + " mmd:flex-col-reverse mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center"}>
 
                 <div className="textContainer flex-1"><p>{design.text_1}</p></div>
-                <div style={{width: design.img_size+"%"}} className="imgContainer relative">
+                <div style={{width: design.img_size+"%"}} className="imgContainer relative mmd:w-3/4">
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
                     </ConditionalLink>
@@ -39,13 +39,13 @@ const DesignCard = (props) => {
 
     }else if(design.type === 3){
         return (
-            <div style={{width: design.card_width+"%"}} className={"cardContainer flex mt-" + design.spacing_top.toString() + " pb-" + design.spacing_bottom.toString() +" mlr-"+pos}>
-                <div style={{width: design.img_size+"%"}} className="imgContainer relative flex-2">
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:mlr-"+pos+ " mmd:flex-row mmd:justify-center mmd:w-full mmd:text-2xl mmd:text-left mmd:mb-48 mmd:relative mmd:text-sm mmd:px-4"}>
+                <div style={{width: design.img_size+"%"}} className="imgContainer relative flex-2 mmd:w-full">
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
                     </ConditionalLink>
                 </div>
-                <div className="paragraphContainer flex-1 flex">
+                <div className="paragraphContainer lg:flex-1 flex mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-10 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:px-4">
                     <div id="col_1" className="textContainer flex-1 ml-1"><p>{design.text_1}</p></div>
                     <div id="col_2" className="textContainer flex-1 ml-1"><p>{design.text_2}</p></div>
                 </div>

@@ -366,3 +366,20 @@ svg{
     line-height: 12rem;
   }
 }
+
+@media screen and (max-width: 667px ){
+  html{
+    font-size: 10px;
+    overflow-x: hidden;
+  }
+
+  .home > h1{
+    font-size: 11rem;
+    line-height: 10rem;
+    padding-bottom: 3rem;
+  }
+
+  #fluxusPurge{
+    left: 2%;
+  }
+}
