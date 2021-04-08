@@ -28,6 +28,7 @@ const DesignContainer = (props) => {
                     for(let i = 0; i < paths.length; i++){
                         let pathLength = paths[i].getTotalLength();
                         drawLength = pathLength * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+                        console.log("TEST: " + drawLength);
                         // only apply if scrolling down, and if beyond current line
                         /* console.log("draw: " + drawLength + " last: " + lastDrawLengths[i]); */
                         if(drawLength >= lastDrawLengths[i]){
@@ -53,12 +54,11 @@ const DesignContainer = (props) => {
     
         }, []);
 
-
     return(
         <main className={"text-"+ fontColor +" lander flex lg:pt-24 " + (noisy ? "noisy " : "") + "mmd:flex mmd:justify-center mmd:flex-col mmd:pt-12 mmd:relative"}>
             <div className="flex-initial lg:inline-block lg:ml-24 z-20 lg:mr-0 relative mmd:text-center">
                 <h1 id="title">{title}</h1>
-                <ScrollableLine fontColor={fontColor} />
+                {!isMobile && <ScrollableLine fontColor={fontColor} /> }
             </div>
 
             <div className="flex-initial relative test mmd:text-center">
@@ -68,6 +68,7 @@ const DesignContainer = (props) => {
                     
                 ))}
             </div>       
+
         </main>
     );
 }

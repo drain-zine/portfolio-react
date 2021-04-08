@@ -8,6 +8,8 @@ const Grid = () => {
             <div className="gridLines mmd:px-2">
                 <div className="cell"></div>
                 <div className="cell"></div>
+                <div className="cell"></div>
+                <div className="cell"></div>
             </div>
         );
     }else{

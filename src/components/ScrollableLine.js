@@ -29,14 +29,14 @@ const ScrollableLine = (props) => {
                 setStrokeDasharray(pathLength + ' ' + pathLength);
                 setStrokeDashoffset(pathLength - startingLength);
             }else{
-                setTimeout(()=>{
+
                     var pathLength = Math.max(ref.current.parentElement.parentElement.offsetHeight);
                     console.log("[INIT LINE MOB] INIT LINE Height:  " + pathLength + " test:  ");
 
                     setLineHeight(pathLength);
                     setStrokeDasharray(pathLength + ' ' + pathLength);
                     setStrokeDashoffset(pathLength - startingLength);
-                    },500);
+      
             }
         }
     },[ref]);

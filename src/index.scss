@@ -395,17 +395,15 @@ svg{
   }
 
   .cell {
-    flex: 0 0 50%;                       
-    width: 100%;
+    flex: 0 0 50%;   
+    width:50%;                    
     border-left: $primary-border-stack;
     border-right: $primary-border-stack;
     border-top: $primary-border-stack;
     
   }
 
-  .cell:nth-child(2){
-    border-bottom: $primary-border-stack;
-  }
+
   
 
 

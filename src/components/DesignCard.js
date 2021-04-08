@@ -15,7 +15,7 @@ const DesignCard = (props) => {
            <div style={{width: design.card_width+"%"}} className={(design.link? 'cardLink' : '') + " cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-col mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center"}>
 
             
-            <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative mmd:w-full mmd:mb-4">
+            <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative mmd:w-full mmd:mb-4 mmd:px-4">
                 <ConditionalLink to={design.link_url} condition={design.link}>
                     <CardImg src={design.img} size={design.img_size}/>      
                 </ConditionalLink>
@@ -28,7 +28,7 @@ const DesignCard = (props) => {
         return(
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-col-reverse mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center"}>
 
-                <div className="textContainer flex-1"><p>{design.text_1}</p></div>
+                <div className="textContainer flex-1 "><p>{design.text_1}</p></div>
                 <div style={{width: design.img_size+"%"}} className="imgContainer relative mmd:w-3/4">
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
@@ -67,7 +67,7 @@ const DesignCard = (props) => {
                     <CardImg src={design.img} size={design.img_size}/>
                     
                 </div>
-                <div className="paragraphContainer flex-1 flex flex-col">
+                <div className="paragraphContainer flex-1 flex flex-col mmd:px-4">
                     <div id="row_1" className="textContainer flex-initial ml-1"><p>{design.text_1}</p></div>
                     <div id="row_2" className="textContainer flex-initial mt-3 ml-1"><p>{design.text_2}</p></div>
                 </div>
