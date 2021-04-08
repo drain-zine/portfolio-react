@@ -41,11 +41,39 @@ const DesignContainer = (props) => {
                 // update lastScrollTop
                 lastScrollTop = st;
             }  
+
+            const animatePathsMobile = () => {
+                var drawLength = 0;
+                var st = window.pageYOffset || document.documentElement.scrollTop;
+                // check if scrolling down
+                if(st >= lastScrollTop){
+                    console.log("SCROLLING DOWN")
+                    // handle drawing of each path  
+                    for(let i = 0; i < paths.length; i++){
+                        let pathLength = paths[i].getTotalLength();
+                        drawLength = pathLength * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+                        // only apply if scrolling down, and if beyond current line
+                        /* console.log("draw: " + drawLength + " last: " + lastDrawLengths[i]); */
+                        if(drawLength >= lastDrawLengths[i]){
+                        /*  console.log("path: " + pathLength + " draw: " + drawLength); */
+                            paths[i].style.strokeDashoffset = pathLength - drawLength;
+                        
+                            // update last draw lengths
+                            lastDrawLengths[i] = drawLength;
+                        }
+                    }
+                }
+                // update lastScrollTop
+                lastScrollTop = st;
+            
+            }  
     
             window.addEventListener('scroll', animatePaths, false);
+            window.addEventListener('touchmove', animatePaths, false);
             
             return function cleanup() {
                 window.removeEventListener('scroll', animatePaths, false);
+                window.removeEventListener('touchmove', animatePaths, false);
             };
     
         }, []);
