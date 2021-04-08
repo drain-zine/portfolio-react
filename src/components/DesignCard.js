@@ -76,9 +76,9 @@ const DesignCard = (props) => {
     }else if(design.type === 6){
         return (
             <div style={{width: design.card_width+"%"}} className={" cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-col mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center mmd:relative "}>
-                <div className="paragraphContainer lg:flex-1 lg:ml-1 flex flex-col mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-10 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:px-4 mmd:z-30">
-                    <div id="row_1" className="textContainer flex-initial  mmd:w-full"><p>{design.text_1}</p></div>
-                    <div id="row_2" className="textContainer flex-initial mt-3 mmd:w-full"><p>{design.text_2}</p></div>
+                <div className="paragraphContainer lg:flex-1 lg:ml-1 flex flex-col mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-10 mmd:px-2 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:z-30">
+                    <div id="row_1" className="textContainer flex-initial  mmd:w-full mmd:mx-auto"><p>{design.text_1}</p></div>
+                    <div id="row_2" className="textContainer flex-initial mt-3 mmd:w-full mmd:mx-auto"><p>{design.text_2}</p></div>
                 </div>
                 <div style={{width: design.img_size+"%"}} className="imgContainer flex-inital relative mmd:w-full">
                     <CardImg src={design.img} size={design.img_size}/>
