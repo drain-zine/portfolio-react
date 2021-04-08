@@ -2,16 +2,16 @@ import React from "react";
 
 const Grid = () => {
     return(
-        <div class="grid">
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
+        <div className="gridLines">
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
+            <div className="cell"></div>
         </div>
     );
 };
