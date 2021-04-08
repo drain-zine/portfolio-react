@@ -21,12 +21,23 @@ const ScrollableLine = (props) => {
             let rand_offset = 3+Math.floor(Math.random() * 4);
             setLineRandYOffset(rand_offset);
 
-            var pathLength = Math.max(ref.current.parentElement.offsetHeight,1700);
-            console.log("[INIT LINE] INIT LINE Height:  " + pathLength);
+            if(!isMobile){
+                var pathLength = Math.max(ref.current.parentElement.offsetHeight);
+                console.log("[INIT LINE] INIT LINE Height:  " + pathLength + " test:  ");
 
-            setLineHeight(pathLength);
-            setStrokeDasharray(pathLength + ' ' + pathLength);
-            setStrokeDashoffset(pathLength - startingLength);
+                setLineHeight(pathLength);
+                setStrokeDasharray(pathLength + ' ' + pathLength);
+                setStrokeDashoffset(pathLength - startingLength);
+            }else{
+                setTimeout(()=>{
+                    var pathLength = Math.max(ref.current.parentElement.parentElement.offsetHeight);
+                    console.log("[INIT LINE MOB] INIT LINE Height:  " + pathLength + " test:  ");
+
+                    setLineHeight(pathLength);
+                    setStrokeDasharray(pathLength + ' ' + pathLength);
+                    setStrokeDashoffset(pathLength - startingLength);
+                    },500);
+            }
         }
     },[ref]);
 
