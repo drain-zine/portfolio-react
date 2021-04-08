@@ -88,7 +88,7 @@ const DesignCard = (props) => {
         );
     }else if(design.type === 7){
         return (
-            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p text-sm mmd:text-left mmd:w-full mmd:mb-48"}>
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p text-sm mmd:text-left mmd:w-full mmd:mb-48 mmd:px-4"}>
                 <div className="paragraphContainer flex-1 flex mmd:flex-row mmd:flex-wrap">
                     <div id="col_1" className="textContainer lg:ml-4 lg:flex-initial ml-1   mmd:w-3/10 mmd:mb-2 "><p>{design.text_1}</p></div>
                     <div id="col_2" className="textContainer lg:ml-4 lg:flex-initial ml-1 mmd:w-3/10 mmd:mb-2"><p>{design.text_2}</p></div>
