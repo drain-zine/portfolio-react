@@ -1,5 +1,5 @@
 const whitelist = ["bg-white", "bg-black", "text-black", "text-white"];
-const whitelistPatterns = [/^mt/, /^mb/, /^pt/, /^pb/, /^w/];
+const whitelistPatterns = [/^mt/, /^mb/, /^pt/, /^pb/, /^w/, /^ml/, /^mr/, /^-ml/, /^-mr/, /^lg:/, /^mmd:/];
 const { screens } = require('tailwindcss/defaultTheme');
 
 module.exports = {
