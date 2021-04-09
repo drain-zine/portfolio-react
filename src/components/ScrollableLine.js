@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 const ScrollableLine = (props) => {
     const {fontColor} = props;
@@ -20,17 +21,28 @@ const ScrollableLine = (props) => {
             let rand_offset = 3+Math.floor(Math.random() * 4);
             setLineRandYOffset(rand_offset);
 
-            var pathLength = ref.current.parentElement.offsetHeight;
-            console.log("[INIT LINE] INIT LINE Height:  " + pathLength);
+            if(!isMobile){
+                var pathLength = Math.max(ref.current.parentElement.offsetHeight);
+                console.log("[INIT LINE] INIT LINE Height:  " + pathLength + " test:  ");
 
-            setLineHeight(pathLength);
-            setStrokeDasharray(pathLength + ' ' + pathLength);
-            setStrokeDashoffset(pathLength - startingLength);
+                setLineHeight(pathLength);
+                setStrokeDasharray(pathLength + ' ' + pathLength);
+                setStrokeDashoffset(pathLength - startingLength);
+            }else{
+
+                    var pathLength = Math.max(ref.current.parentElement.parentElement.offsetHeight);
+                    console.log("[INIT LINE MOB] INIT LINE Height:  " + pathLength + " test:  ");
+
+                    setLineHeight(pathLength);
+                    setStrokeDasharray(pathLength + ' ' + pathLength);
+                    setStrokeDashoffset(pathLength - startingLength);
+      
+            }
         }
     },[ref]);
 
     return(
-        <svg ref={ref} viewBox={"0 0 100 " + lineHeight} className="absolute z-0" id="line-svg" height="100%" style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
+        <svg ref={ref} viewBox={"0 0 100 " + lineHeight} className="absolute z-0" id="line-svg" height={isMobile ? lineHeight : "100%"} style={{transform: "translateY(-"+lineRandYOffset+"%)"}}>
             <line  x1="50%" y1="0%" x2="50%" y2="100%"  className="line-path-test" fill="none" strokeDasharray = {strokeDasharray} strokeDashoffset = { strokeDashoffset}/>
         </svg>
     );

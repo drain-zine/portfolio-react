@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { isMobile } from "react-device-detect"
 
 import DesignCard from '../components/DesignCard';
 import ScrollableLine from './ScrollableLine';
@@ -27,6 +28,7 @@ const DesignContainer = (props) => {
                     for(let i = 0; i < paths.length; i++){
                         let pathLength = paths[i].getTotalLength();
                         drawLength = pathLength * ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+                        console.log("TEST: " + drawLength);
                         // only apply if scrolling down, and if beyond current line
                         /* console.log("draw: " + drawLength + " last: " + lastDrawLengths[i]); */
                         if(drawLength >= lastDrawLengths[i]){
@@ -43,28 +45,30 @@ const DesignContainer = (props) => {
             }  
     
             window.addEventListener('scroll', animatePaths, false);
+            window.addEventListener('touchmove', animatePaths, false);
             
             return function cleanup() {
                 window.removeEventListener('scroll', animatePaths, false);
+                window.removeEventListener('touchmove', animatePaths, false);
             };
     
         }, []);
 
-
     return(
-        <main className={"text-"+ fontColor +" lander flex pt-24 " + (noisy ? "noisy" : "")}>
-            <div className="flex-initial inline-block ml-24 z-20 mr-0 relative">
+        <main className={"text-"+ fontColor +" lander flex lg:pt-24 " + (noisy ? "noisy " : "") + "mmd:flex mmd:justify-center mmd:flex-col mmd:pt-12 mmd:relative"}>
+            <div className="flex-initial lg:inline-block lg:ml-24 z-20 lg:mr-0 relative mmd:text-center">
                 <h1 id="title">{title}</h1>
-                <ScrollableLine fontColor={fontColor} />
+                {!isMobile && <ScrollableLine fontColor={fontColor} /> }
             </div>
 
-            <div className="flex-initial relative test">
+            <div className="flex-initial relative test mmd:text-center">
                 {data.map((design,index) => (
 
                     <DesignCard design={design} fontColor={fontColor} cardN={data.length} index={index}/>
                     
                 ))}
             </div>       
+
         </main>
     );
 }

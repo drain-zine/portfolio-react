@@ -10,7 +10,7 @@ const CardImg= (props) => {
 
     return(
         <div>
-            <img ref={ref} id="main" className="w-full absolute z-10"src={src}/>    
+            <img ref={ref} id="main" className="w-full absolute z-20"src={src}/>    
             <img id="stretcher" className="w-full invisible" src={src}/>  
         </div>
     );

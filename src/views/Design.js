@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import $ from 'jquery'; 
 
 import DesignContainer from '../components/DesignContainer';
 import Menu from '../components/Menu';
-
+import Grid from '../components/Grid';
 import {data_raw} from '../data/Designs.js';
 import energyGrid from '../assets/static/energyGrid.png';
 import psychogeographie from '../assets/static/psychogeographie2.png';
@@ -30,6 +31,7 @@ const Design = () => {
             <img id="psychogeographie" src={psychogeographie} />
             <img id="fluxusPurge" src={fluxusPurge} />
             <Menu />
+            {isMobile && <Grid />}
         </div>
     );
 }

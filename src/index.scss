@@ -45,6 +45,10 @@ $primary-border-stack: 1px solid rgb(255, 255, 255, 0.15);
 
 $design-page-font-size: 1.25rem;
 
+.font-cloister{
+  font-family: "Cloister";
+}
+
 html{
   font-size: 16px;
   background-image: url("./assets/static/whitenoise.png");
@@ -225,7 +229,7 @@ svg > line{
 }
 
 /* GRID */
-.grid {
+.gridLines {
   display: flex;                       
   flex-wrap: wrap;                     
   justify-content: space-around;
@@ -364,5 +368,61 @@ svg{
   .home > h1{
     font-size: 14rem;
     line-height: 12rem;
+  }
+}
+
+@media screen and (max-width: 667px ){
+  html{
+    font-size: 10px;
+    overflow-x: hidden;
+  }
+
+  .home > h1{
+    font-size: 11rem;
+    line-height: 10rem;
+    padding-bottom: 3rem;
+  }
+
+  .gridLines {
+    display: flex;                       
+    flex-wrap: wrap;                     
+    justify-content: space-around;
+    position: fixed;
+    flex-direction: column;
+  
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none; // so we can click through
+    
+  }
+
+  .cell {
+    flex: 0 0 50%;   
+    width:50%;                    
+    border-left: $primary-border-stack;
+    border-right: $primary-border-stack;
+    border-top: $primary-border-stack;
+    
+  }
+
+
+  
+
+
+  #energyGrid{
+    top: 3%;
+    left: 0%;
+    width: 50%;
+  }
+
+  #psychogeographie{
+    left: 50%;
+    top: 58%;
+  }
+  #fluxusPurge{
+    left: 2%;
+    top: 94%;
   }
 }
