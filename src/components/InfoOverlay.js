@@ -3,9 +3,9 @@ import React from 'react';
 const InfoOverlay = ({data}) => {
    
     return(
-        <div className="flex flex-col" >
-            <img className={data.type+"-org w-2/3 mb-4 ml-2"} src={data.src}/>
-            <p className="text-right text-4xl mr-20 mb-4 font-cloister">{data.info}</p> 
+        <div className="relative  my-8" >
+            <img className={data.type+"-org w-2/3 mx-auto"} src={data.src}/>
+            <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-cloister text-4xl text-red-600">{data.info}</p> 
         </div>
     );
 }
