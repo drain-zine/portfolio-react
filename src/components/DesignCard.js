@@ -15,7 +15,7 @@ const DesignCard = (props) => {
            <div style={{width: design.card_width+"%"}} className={(design.link? 'cardLink' : '') + " cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-col mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center"}>
 
             
-            <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative mmd:w-full mmd:mb-4 mmd:px-4">
+            <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative mmd:w-full mmd:mb-4 mmd:mx-4">
                 <ConditionalLink to={design.link_url} condition={design.link}>
                     <CardImg src={design.img} size={design.img_size}/>      
                 </ConditionalLink>
@@ -39,13 +39,13 @@ const DesignCard = (props) => {
 
     }else if(design.type === 3){
         return (
-            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-row mmd:justify-center mmd:w-full mmd:text-2xl mmd:text-left mmd:mb-48 mmd:relative mmd:px-4"}>
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-row mmd:justify-center mmd:w-full mmd:text-2xl mmd:text-left mmd:mb-48 mmd:relative mmd:mx-4"}>
                 <div style={{width: design.img_size+"%"}} className="imgContainer relative flex-2 mmd:w-full">
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
                     </ConditionalLink>
                 </div>
-                <div className="paragraphContainer lg:flex-1 flex mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-30 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:px-4">
+                <div className="paragraphContainer lg:flex-1 flex mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-30 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:mx-4">
                     <div id="col_1" className="textContainer flex-1 ml-1"><p>{design.text_1}</p></div>
                     <div id="col_2" className="textContainer flex-1 ml-1"><p>{design.text_2}</p></div>
                 </div>
@@ -53,7 +53,7 @@ const DesignCard = (props) => {
         );
     }else if(design.type === 4){
         return (
-            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-row mmd:justify-center mmd:w-full  mmd:mb-48 mmd:relative mmd:px-4"}>
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-row mmd:justify-center mmd:w-full  mmd:mb-48 mmd:relative mmd:mx-4"}>
 
                 <div style={{width: design.img_size+"%"}} className="imgContainer flex-1 relative">
                     <CardImg src={design.img} size={design.img_size}/>
@@ -67,7 +67,7 @@ const DesignCard = (props) => {
                     <CardImg src={design.img} size={design.img_size}/>
                     
                 </div>
-                <div className="paragraphContainer flex-1 flex flex-col mmd:px-4">
+                <div className="paragraphContainer flex-1 flex flex-col mmd:mx-4">
                     <div id="row_1" className="textContainer flex-initial ml-1"><p>{design.text_1}</p></div>
                     <div id="row_2" className="textContainer flex-initial mt-3 ml-1"><p>{design.text_2}</p></div>
                 </div>
@@ -88,7 +88,7 @@ const DesignCard = (props) => {
         );
     }else if(design.type === 7){
         return (
-            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p text-sm mmd:text-left mmd:w-full mmd:mb-48 mmd:px-4"}>
+            <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p text-sm mmd:text-left mmd:w-full mmd:mb-48 mmd:mx-4"}>
                 <div className="paragraphContainer flex-1 flex mmd:flex-row mmd:flex-wrap">
                     <div id="col_1" className="textContainer lg:ml-4 lg:flex-initial ml-1   mmd:w-3/10 mmd:mb-2 "><p>{design.text_1}</p></div>
                     <div id="col_2" className="textContainer lg:ml-4 lg:flex-initial ml-1 mmd:w-3/10 mmd:mb-2"><p>{design.text_2}</p></div>
