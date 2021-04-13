@@ -13,14 +13,14 @@ import fluxusPurge from '../assets/static/fluxusPurge.png';
 const Design = () => {
     // state decs
     const [data] = useState(data_raw);
-
-    useEffect(() => {
-        /* Fade in Elements */
+    /*
         $(".cardContainer").each(function(i) {   
             $(this).delay((500) * (i+1)).fadeTo((750),1);
         });
         
     });
+*/
+
     
     return(
         <div className="relative flex flex-col noisy">

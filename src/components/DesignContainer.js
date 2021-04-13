@@ -3,6 +3,7 @@ import { isMobile } from "react-device-detect"
 
 import DesignCard from '../components/DesignCard';
 import ScrollableLine from './ScrollableLine';
+import FadeInWhenVisible from '../components/FadeInWhenVisible';
 
 const DesignContainer = (props) => {  
     const {data,title,color, fontColor, noisy} = props;
@@ -54,6 +55,7 @@ const DesignContainer = (props) => {
     
         }, []);
 
+
     return(
         <main className={"text-"+ fontColor +" lander flex lg:pt-24 " + (noisy ? "noisy " : "") + "mmd:flex mmd:justify-center mmd:flex-col mmd:pt-12 mmd:relative"}>
             <div className="flex-initial lg:inline-block lg:ml-24 z-20 lg:mr-0 relative mmd:text-center">
@@ -63,9 +65,9 @@ const DesignContainer = (props) => {
 
             <div className="flex-initial relative test mmd:text-center">
                 {data.map((design,index) => (
-
-                    <DesignCard design={design} fontColor={fontColor} cardN={data.length} index={index}/>
-                    
+                    <FadeInWhenVisible>
+                        <DesignCard design={design} fontColor={fontColor} cardN={data.length} index={index}/>
+                    </FadeInWhenVisible>
                 ))}
             </div>       
 
