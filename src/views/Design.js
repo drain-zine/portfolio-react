@@ -20,10 +20,12 @@ const Design = () => {
     const textOverlayRef = useRef(null);
 
     const [textOverlayWidth, setTextOverlayWidth] = useState(0);
+    const [widthSet, setWidthSet] = useState(false);
 
     useEffect(() => {
-        if(textRef.current && textOverlayRef.current){
+        if(textRef.current && textOverlayRef.current && !widthSet){
             setTextOverlayWidth(textRef.current.parentElement.getBoundingClientRect().width);
+            setWidthSet(true);
         }
     }, [textRef, textOverlayRef]);
 
@@ -80,7 +82,7 @@ const Design = () => {
                             <CardImg src={require("./../assets/static/bird.png").default} size={40}/>      
                         </ConditionalLink></div>
                             
-                            <ScrollOnSlideWhenVisible className={"absolute z-20 top-0 mt-24 lg:text-4xl textContainer flex-1 ml-1 text-black"} style ={{right: "85%", width: textOverlayWidth}}>
+                            <ScrollOnSlideWhenVisible className={"lg:text-4xl lg:mt-24 lg:-ml-40 lg:-mr-28 paragraphContainer lg:flex-1 flex mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-30 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:mx-4 absolute z-20 top-0 mt-24 lg:text-4xl textContainer flex-1 ml-1 text-black"} style ={{right: "100%", width: textOverlayWidth}}>
 
                             <div id="col_1_overlay"  className="textContainer flex-1 ml-1"><p>Drain Zine Edition 1. An independent student zine focusing on the fringes of art, fashion and music culture. What will you find from down the drain?</p></div>
                         <div id="col_2_overlay" ref={textOverlayRef} className="textContainer flex-1 ml-1"><p>"Welcome adventurer to this perilous realm. Danger lurks around every corner... however, if you can brave DRAIN's treacheries it is said great knowledge will be bestowed upon thee..."</p></div>
