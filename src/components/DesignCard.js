@@ -5,8 +5,7 @@ import  useLineInit  from '../hooks/useLineInit'
 import  ConditionalLink from './ConditionalLink'
 
 const DesignCard = (props) => {
-    const {design } = props;
-
+    const {design, font_size } = props;
 
     var pos = design.rand_x ? Math.floor(Math.random() * 5).toString() : design.x_pos;
 
@@ -20,7 +19,7 @@ const DesignCard = (props) => {
                     <CardImg src={design.img} size={design.img_size}/>      
                 </ConditionalLink>
             </div>
-            <div className="textContainer flex-1"><p>{design.text_1}</p></div>
+            <div className={font_size + " " + design.text_offset_left + " " + design.text_offset_right + " " + design.text_offset_top + " textContainer flex-1"}><p>{design.text_1}</p></div>
         </div>
 
         );
@@ -28,7 +27,7 @@ const DesignCard = (props) => {
         return(
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-col-reverse mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center opacity-100"}>
 
-                <div className="textContainer flex-1 "><p>{design.text_1}</p></div>
+                <div className={"textContainer flex-1 " + font_size}><p>{design.text_1}</p></div>
                 <div style={{width: design.img_size+"%"}} className="imgContainer relative mmd:w-3/4">
                     <ConditionalLink to={design.link_url} condition={design.link}>
                         <CardImg src={design.img} size={design.img_size}/>      
@@ -45,7 +44,7 @@ const DesignCard = (props) => {
                         <CardImg src={design.img} size={design.img_size}/>      
                     </ConditionalLink>
                 </div>
-                <div className="paragraphContainer lg:flex-1 flex mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-30 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:mx-4">
+                <div className={font_size + " " + design.text_offset_left + " " + design.text_offset_right + " " + design.text_offset_top + " paragraphContainer lg:flex-1 flex mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-30 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:mx-4"}>
                     <div id="col_1" className="textContainer flex-1 ml-1"><p>{design.text_1}</p></div>
                     <div id="col_2" className="textContainer flex-1 ml-1"><p>{design.text_2}</p></div>
                 </div>
@@ -67,7 +66,7 @@ const DesignCard = (props) => {
                     <CardImg src={design.img} size={design.img_size}/>
                     
                 </div>
-                <div className="paragraphContainer flex-1 flex flex-col mmd:mx-4">
+                <div className={font_size + " paragraphContainer flex-1 flex flex-col mmd:mx-4"}>
                     <div id="row_1" className="textContainer flex-initial ml-1"><p>{design.text_1}</p></div>
                     <div id="row_2" className="textContainer flex-initial mt-3 ml-1"><p>{design.text_2}</p></div>
                 </div>
@@ -76,7 +75,7 @@ const DesignCard = (props) => {
     }else if(design.type === 6){
         return (
             <div style={{width: design.card_width+"%"}} className={" cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p mmd:flex-col mmd:justify-center mmd:w-full mmd:text-2xl mmd:mb-48 mmd:items-center mmd:relative "}>
-                <div className="paragraphContainer lg:flex-1 lg:ml-1 flex flex-col mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-10 mmd:px-2 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:z-30">
+                <div className={font_size + " paragraphContainer lg:flex-1 lg:ml-1 flex flex-col mmd:absolute mmd:left-1/2 mmd:top-1/2 mmd:z-10 mmd:px-2 mmd:w-full mmd:transform mmd:-translate-x-1/2 mmd:-translate-y-1/2 mmd:z-30"}>
                     <div id="row_1" className="textContainer flex-initial  mmd:w-full mmd:mx-auto"><p>{design.text_1}</p></div>
                     <div id="row_2" className="textContainer flex-initial mt-3 mmd:w-full mmd:mx-auto"><p>{design.text_2}</p></div>
                 </div>
@@ -89,7 +88,7 @@ const DesignCard = (props) => {
     }else if(design.type === 7){
         return (
             <div style={{width: design.card_width+"%"}} className={"cardContainer flex lg:mt-" + design.spacing_top.toString() + " lg:pb-" + design.spacing_bottom.toString() +" lg:"+(pos < 0 ? "-" : "")+ "ml-"+ Math.abs(pos) + "p text-sm mmd:text-left mmd:w-full mmd:mb-48 mmd:mx-4"}>
-                <div className="paragraphContainer flex-1 flex mmd:flex-row mmd:flex-wrap">
+                <div className={font_size + " paragraphContainer flex-1 flex mmd:flex-row mmd:flex-wrap"}>
                     <div id="col_1" className="textContainer lg:ml-4 lg:flex-initial ml-1   mmd:w-3/10 mmd:mb-2 "><p>{design.text_1}</p></div>
                     <div id="col_2" className="textContainer lg:ml-4 lg:flex-initial ml-1 mmd:w-3/10 mmd:mb-2"><p>{design.text_2}</p></div>
                     <div id="col_3" className="textContainer lg:ml-4 lg:flex-initial ml-1  mmd:w-3/10 mmd:mb-2"><p>{design.text_3}</p></div>

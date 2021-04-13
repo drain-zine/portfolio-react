@@ -59,14 +59,14 @@ const DesignContainer = (props) => {
     return(
         <main className={"text-"+ fontColor +" lander flex lg:pt-24 " + (noisy ? "noisy " : "") + "mmd:flex mmd:justify-center mmd:flex-col mmd:pt-12 mmd:relative"}>
             <div className="flex-initial lg:inline-block lg:ml-24 z-20 lg:mr-0 relative mmd:text-center">
-                <h1 id="title">{title}</h1>
+                <h1 id="title" style={{fontSize: "15rem"}}>{title}</h1>
                 {!isMobile && <ScrollableLine fontColor={fontColor} /> }
             </div>
 
             <div className="flex-initial relative test mmd:text-center">
                 {data.map((design,index) => (
                     <FadeInWhenVisible>
-                        <DesignCard design={design} fontColor={fontColor} cardN={data.length} index={index}/>
+                        <DesignCard design={design} font_size={design.font_size}/>
                     </FadeInWhenVisible>
                 ))}
             </div>       
