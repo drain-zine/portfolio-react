@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 
 import DesignCard from '../components/DesignCard';
 
 const DesignContainer = (props) => {  
     const {data,title,color, fontColor} = props;
+    const ref = useRef(null)
+
+
         
      // animate lines
      useEffect(() => {
@@ -50,14 +53,15 @@ const DesignContainer = (props) => {
       }, []);
 
     return(
-        <main className={"bg-"+color + " text-"+ fontColor +" lander page flex pt-24"}>
+        <main ref={ref} className={"bg-"+color + " text-"+ fontColor +" lander page flex pt-24"}>
             <div className="flex-initial inline-block ml-24 z-20 mr-0">
                 <h1>{title}</h1>
             </div>
 
             <div className="flex-initial relative test">
-                {data.map((design) => (
-                    <DesignCard design={design} fontColor={fontColor}/>
+                {data.map((design,index) => (
+
+                    <DesignCard design={design} fontColor={fontColor} cardN={data.length} index={index}/>
                     
                 ))}
             </div>       

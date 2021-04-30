@@ -4,11 +4,9 @@ import React, { useRef, useEffect } from 'react';
 // such that we can apply the z-index for the line drawing animation
 // but we also require the card to contain the image, hence
 // anothe markup element of the same img, set to invisible.
-const CardImg= ({src,size}) => {
+const CardImg= (props) => {
+    const {src,size} = props;
     const ref = useRef(null);
-    useEffect(() => {
-      console.log('width', ref.current ? ref.current.offsetWidth : 0);
-    }, [ref.current]);
 
     return(
         <div>

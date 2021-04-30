@@ -6,8 +6,8 @@ export const data_raw = [
         type: 1,
         spacing_top: 80,
         spacing_bottom: 0,
-        rand_x: true,
-        x_pos: 1,
+        rand_x: false,
+        x_pos: 3,
 
         img: require("./../assets/dynamic/skeleton.gif").default,
         text_1: 'Avant Vibes, powered by Monster Energy® is a weekly delve into the forefront of vibe culture, ranging from the most fuego fits to the most diesel tracks out right now. Follow your hosts as they center their chakras, live, laugh, and love in the center of it all. Peace forever, R.I.P Jerry. - Scraped from “About Page”',   
@@ -22,8 +22,8 @@ export const data_raw = [
         type: 3,
         spacing_top: 80,
         spacing_bottom: 0,
-        rand_x: true,
-        x_pos: 1,
+        rand_x: false,
+        x_pos: 0,
         card_width: 60,
 
         text_1: 'Drain Zine Edition 1. An independent student zine focusing on the fringes of art, fashion and music culture. What will you find from down the drain?',
@@ -40,8 +40,8 @@ export const data_raw = [
         type: 2,
         spacing_top: 80,
         spacing_bottom: 32,
-        rand_x: true,
-        x_pos: 1,
+        rand_x: false,
+        x_pos: 3,
 
         img: require("./../assets/static/tavern1.png").default,
         text_1: 'DRAIN Edition 2. An independent choose-your-own-adventure zine, with several uniquely styled "locations" corresponding to the zine\'s themes.',
