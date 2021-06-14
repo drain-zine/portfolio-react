@@ -22,7 +22,7 @@ const ScrollOnSlideWhenVisible = ({children, className, style}) => {
 
 
         const scroll_raw =  ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
-        const scroll_norm = 100*(scroll_raw - firstScroll)/4;
+        const scroll_norm = 100*(scroll_raw )/8;
 
         console.log("SCROLL: " + scroll_norm)
         setDelX(scroll_norm);
